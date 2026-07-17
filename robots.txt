@@ -1,0 +1,9 @@
+User-Agent: *
+Allow: /
+Disallow: /start
+Disallow: /ru/start
+Disallow: /uz/start
+Disallow: /thank-you
+Disallow: /api/
+
+Sitemap: https://shirokovdeustechnology.com/sitemap.xml
