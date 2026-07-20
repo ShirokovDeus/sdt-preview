@@ -46,12 +46,41 @@
   .hero h1 em{font-style:normal;color:var(--gold)}
   .hsub{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:28px}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
-  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 22px;font-size:.93rem;font-weight:600;text-decoration:none;transition:.2s}
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;border:none;border-radius:999px;padding:13px 22px;font-size:.93rem;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s,color .25s}
   .btn svg{width:17px;height:17px;flex:none}
-  .btn-gold{background:linear-gradient(135deg,var(--gold),#b8945a);color:#151004}
-  .btn-gold:hover{filter:brightness(1.08)}
-  .btn-line{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
-  .btn-line:hover{border-color:var(--gold);color:var(--gold2)}
+  .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn:hover::after{left:140%}
+  .btn:active{transform:translateY(1px) scale(.985)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,#a8873f);color:#151004;box-shadow:0 10px 26px rgba(211,176,108,.32),inset 0 1px 0 rgba(255,255,255,.45)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(211,176,108,.48)}
+  .btn-line{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+  .btn-line:hover{transform:translateY(-2px);border-color:var(--gold);color:var(--gold2);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+  .icb{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+  .icb svg{width:15px;height:15px;color:#fff}
+  .icb.wa{background:#25D366}
+  .icb.tg{background:#2AABEE}
+  .icb.ph{background:#151004}.icb.ph svg{color:var(--gold)}
+
+  /* mobile action bar */
+  .mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;display:none;gap:8px;background:rgba(14,14,19,.92);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 6px;border-radius:12px;font-size:.8rem;font-weight:700;text-decoration:none}
+  .mbar svg{width:15px;height:15px}
+  .mbar .m-wa{background:#25D366;color:#fff}
+  .mbar .m-tg{background:#2AABEE;color:#fff}
+  .mbar .m-ph{background:var(--gold);color:#151004}
+  @media(max-width:640px){
+    .mbar.show{display:flex}
+    .fab{bottom:88px}
+    .chat{bottom:158px}
+    .teaser{bottom:160px}
+  }
+
+  /* chat teaser */
+  .teaser{position:fixed;right:20px;bottom:94px;z-index:85;background:var(--bg2);border:1px solid var(--line);border-radius:16px 16px 4px 16px;padding:12px 34px 12px 16px;max-width:250px;font-size:.84rem;box-shadow:0 18px 46px rgba(0,0,0,.55);display:none;animation:tin .45s ease;cursor:pointer}
+  .teaser.show{display:block}
+  .teaser b{color:var(--gold2)}
+  .teaser .tx{position:absolute;top:6px;right:10px;color:var(--muted);font-size:1rem}
+  @keyframes tin{from{opacity:0;transform:translateY(10px)}}
   .tchips{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.85rem}
   .tchips span{display:inline-flex;align-items:center;gap:7px}
   .tchips svg{width:15px;height:15px;color:var(--gold)}
@@ -170,15 +199,15 @@
       <p class="hsub">Подбираю ипотечную программу, страхую и юридически сопровождаю сделку под ключ. Вы экономите на ставке и нервах — я беру на себя банки, документы и риски.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="https://wa.me/70000000000?text=Здравствуйте%2C%20Елена!%20Хочу%20консультацию%20по%20ипотеке" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg>
+          <span class="icb wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg></span>
           Написать в WhatsApp
         </a>
         <a class="btn btn-line" href="https://t.me/username_demo" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6ZM8.2 12.9l9.7-6.1c.2-.1.4.2.2.3l-8 7.4c-.3.3-.5.7-.6 1.1l-.3 2.2c0 .3-.5.3-.6 0l-1.1-3.7c-.1-.5.1-1 .7-1.2Z" transform="scale(.92) translate(1,1)"/></svg>
+          <span class="icb tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6ZM8.2 12.9l9.7-6.1c.2-.1.4.2.2.3l-8 7.4c-.3.3-.5.7-.6 1.1l-.3 2.2c0 .3-.5.3-.6 0l-1.1-3.7c-.1-.5.1-1 .7-1.2Z" transform="scale(.92) translate(1,1)"/></svg></span>
           Telegram
         </a>
         <a class="btn btn-line" href="tel:+70000000000">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>
+          <span class="icb ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg></span>
           Позвонить
         </a>
       </div>
@@ -277,6 +306,9 @@
       <div class="rev"><div class="stars">★★★★★</div><p>«Елена довела нашу ипотеку от заявки до ключей. Сами бы мы точно запутались в документах — а тут всё чётко, спокойно и с выгодной ставкой».</p><div class="who">Мария и Сергей · квартира в новостройке</div></div>
       <div class="rev"><div class="stars">★★★★★</div><p>«Мне как ИП отказывали два банка. Елена собрала документы иначе — одобрили. Ещё и страховку сделала дешевле, чем предлагал банк».</p><div class="who">Дмитрий · предприниматель</div></div>
       <div class="rev"><div class="stars">★★★★★</div><p>«Юридическая проверка спасла нас от квартиры с сюрпризом. Нашли другую — Елена сопроводила сделку полностью».</p><div class="who">Анна · вторичное жильё</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Рефинансировали ипотеку через Елену — ставка ниже, платёж легче, а из документов я подписала ровно три бумаги. Остальное она взяла на себя».</p><div class="who">Ольга · рефинансирование</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Каждый год продлеваю через неё страховку — каждый раз дешевле, чем предлагает банк. Один раз был страховой случай: Елена сама всё оформила».</p><div class="who">Виктор · страхование</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Покупали квартиру с маткапиталом и долями детей — банк разводил руками. Елена выстроила сделку так, что опека и банк согласовали с первого раза».</p><div class="who">Наталья и Андрей · сделка с маткапиталом</div></div>
     </div>
   </div>
 </section>
@@ -303,6 +335,19 @@
   </div>
 </footer>
 
+<!-- mobile action bar -->
+<div class="mbar" id="mbar">
+  <a class="m-wa" href="https://wa.me/70000000000?text=Здравствуйте%2C%20Елена!" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>WhatsApp</a>
+  <a class="m-tg" href="https://t.me/username_demo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6Z"/></svg>Telegram</a>
+  <a class="m-ph" href="tel:+70000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>Звонок</a>
+</div>
+
+<!-- chat teaser -->
+<div class="teaser" id="teaser" onclick="teaserOpen(event)">
+  <span class="tx" onclick="teaserClose(event)">×</span>
+  <b>Есть вопрос по ипотеке?</b><br>Я AI-помощник Елены — отвечу за минуту, даже ночью 🌙
+</div>
+
 <!-- AI assistant -->
 <button class="fab" onclick="toggleChat()" aria-label="AI-помощник">
   <span class="dot"></span>
@@ -311,8 +356,8 @@
 
 <div class="chat" id="chat">
   <div class="chead">
-    <div class="cava">AI</div>
-    <div><b>Помощник Елены</b><small>онлайн · отвечает мгновенно</small></div>
+    <img class="cava" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FVTovYDOGsQI8WdGKQu7JbYvoR/hf_20260720_135942_dc2cc0ad-c5ef-42e8-8da5-b6478fbafeba_min.webp" alt="Елена" style="object-fit:cover;object-position:top">
+    <div><b>AI-помощник Елены</b><small>онлайн · отвечает мгновенно</small></div>
     <button class="cclose" onclick="toggleChat()">×</button>
   </div>
   <div class="cbody" id="cbody"></div>
@@ -339,15 +384,29 @@ const cbody = document.getElementById('cbody');
 const quick = document.getElementById('quick');
 let opened = false;
 
+let phoneMode = false;
 function toggleChat(){
   const c = document.getElementById('chat');
   c.classList.toggle('open');
+  document.getElementById('teaser').classList.remove('show');
   if(c.classList.contains('open') && !opened){opened = true; botSay("Здравствуйте! 👋 Я AI-помощник Елены.\nПодскажу по ипотеке, страхованию и юридическим вопросам сделки — или сразу соединю с Еленой.\n\nВыберите вопрос или напишите свой:"); renderQuick();}
+}
+function teaserOpen(e){ if(e.target.classList.contains('tx')) return; toggleChat(); }
+function teaserClose(e){ e.stopPropagation(); document.getElementById('teaser').classList.remove('show'); }
+setTimeout(()=>{ if(!opened) document.getElementById('teaser').classList.add('show'); }, 2600);
+window.addEventListener('scroll',()=>{
+  const b=document.getElementById('mbar');
+  if(window.scrollY>560) b.classList.add('show'); else b.classList.remove('show');
+},{passive:true});
+function askPhone(){
+  phoneMode = true;
+  botSay("Оставьте номер телефона — Елена перезвонит в удобное для вас время 📞");
 }
 function openChat(){const c=document.getElementById('chat'); if(!c.classList.contains('open')) toggleChat(); c.scrollIntoView({block:'end'});}
 function renderQuick(){
   quick.innerHTML='';
   QA.filter(x=>x.q).forEach(x=>{const b=document.createElement('button');b.textContent=x.q;b.onclick=()=>{userSay(x.q);answer(x.q)};quick.appendChild(b)});
+  const p=document.createElement('button');p.textContent='📞 Оставить номер';p.style.borderColor='var(--gold)';p.onclick=()=>{userSay('Хочу, чтобы мне перезвонили');askPhone()};quick.appendChild(p);
 }
 function el(cls,txt){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
 function botSay(t){el('m-bot',t)}
@@ -368,6 +427,21 @@ function send(){
   if(!v) return;
   inp.value='';
   userSay(v);
+  if(phoneMode){
+    phoneMode=false;
+    const digits=v.replace(/\D/g,'');
+    const t=typing();
+    setTimeout(()=>{
+      t.remove();
+      if(digits.length>=10){
+        botSay("Спасибо, номер записала! ✅ Елена свяжется с вами в ближайшее рабочее время.\n\n(Это демо-витрина: заявка никуда не отправлена. На живой версии она мгновенно придёт Елене в Telegram.)");
+      } else {
+        botSay("Кажется, в номере не хватает цифр 🙂 Напишите его в формате +7 900 000-00-00 — или просто нажмите кнопку WhatsApp выше.");
+        phoneMode=true;
+      }
+    },800);
+    return;
+  }
   answer(v);
 }
 </script>
