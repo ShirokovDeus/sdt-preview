@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Елена Кунсайтес — ипотечный брокер · страхование · юрист</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0e; --bg2:#111116; --card:#16161c; --card2:#1b1b23;
+    --gold:#d3b06c; --gold2:#e8cf9a; --text:#f2f0ea; --muted:#b9b6ae; --line:rgba(211,176,108,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:clip}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,14,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .mono{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600;font-size:.9rem;letter-spacing:.05em}
+  .lname{font-weight:600;font-size:.95rem;letter-spacing:.02em}
+  .lsub{font-size:.68rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  nav{display:flex;gap:22px}
+  nav a{color:var(--muted);text-decoration:none;font-size:.88rem}
+  nav a:hover{color:var(--gold2)}
+  .hcta{background:var(--gold);color:#151004;font-weight:600;font-size:.85rem;padding:10px 18px;border-radius:999px;text-decoration:none;white-space:nowrap}
+  @media(max-width:820px){nav{display:none}}
+
+  /* demo ribbon */
+  .ribbon{background:linear-gradient(90deg,rgba(211,176,108,.12),rgba(211,176,108,.03));border-bottom:1px solid var(--line);text-align:center;font-size:.72rem;color:var(--gold2);letter-spacing:.08em;padding:6px 12px;text-transform:uppercase}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 60px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(211,176,108,.14),transparent 60%),
+    radial-gradient(700px 500px at -10% 110%,rgba(70,60,120,.18),transparent 60%)}
+  .hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:820px){.hgrid{grid-template-columns:1fr;gap:36px}}
+  .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.78rem;color:var(--gold2);letter-spacing:.06em;margin-bottom:22px}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.16;font-weight:600;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hsub{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 22px;font-size:.93rem;font-weight:600;text-decoration:none;transition:.2s}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),#b8945a);color:#151004}
+  .btn-gold:hover{filter:brightness(1.08)}
+  .btn-line{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-line:hover{border-color:var(--gold);color:var(--gold2)}
+  .tchips{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.85rem}
+  .tchips span{display:inline-flex;align-items:center;gap:7px}
+  .tchips svg{width:15px;height:15px;color:var(--gold)}
+
+  .pcard{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .pcard img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+  .pcap{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(12,12,16,.78);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .pcap b{font-size:.95rem;display:block}
+  .pcap small{color:var(--muted);font-size:.75rem}
+  .pulse{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;color:#9be29b;white-space:nowrap}
+  .pulse::before{content:"";width:7px;height:7px;border-radius:50%;background:#6fdc6f;box-shadow:0 0 0 0 rgba(111,220,111,.6);animation:pl 2s infinite}
+  @keyframes pl{70%{box-shadow:0 0 0 9px rgba(111,220,111,0)}}
+
+  /* sections */
+  section{padding:64px 0}
+  .eyebrow{color:var(--gold);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin-bottom:12px}
+  .h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:600;text-align:center;margin-bottom:14px}
+  .lead{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 42px}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cards3{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card .ic{width:44px;height:44px;border-radius:12px;background:rgba(211,176,108,.12);display:grid;place-items:center;margin-bottom:16px}
+  .card .ic svg{width:22px;height:22px;color:var(--gold)}
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card ul{list-style:none;margin:0 0 14px}
+  .card li{color:var(--muted);font-size:.9rem;padding:5px 0 5px 24px;position:relative}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:.85rem}
+  .price{color:var(--gold2);font-size:.85rem}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
+  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;counter-increment:st}
+  .step::before{content:counter(st,decimal-leading-zero);display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px}
+  .step b{display:block;margin-bottom:6px;font-size:.98rem}
+  .step p{color:var(--muted);font-size:.86rem}
+
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cases{grid-template-columns:1fr}}
+  .case{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px}
+  .case .num{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.7rem;margin-bottom:6px}
+  .case b{display:block;font-size:.95rem;margin-bottom:8px}
+  .case p{color:var(--muted);font-size:.86rem}
+
+  .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.revs{grid-template-columns:1fr}}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px;font-size:.9rem}
+  .rev p{color:var(--text);font-size:.9rem;margin-bottom:14px}
+  .rev .who{color:var(--muted);font-size:.8rem}
+
+  .final{background:linear-gradient(160deg,rgba(211,176,108,.10),rgba(70,60,120,.10));border:1px solid var(--line);border-radius:24px;padding:48px 30px;text-align:center}
+  .final h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:12px}
+  .final p{color:var(--muted);margin-bottom:26px}
+  .note{color:var(--muted);font-size:.75rem;margin-top:18px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.8rem;text-align:center}
+  footer b{color:var(--gold2)}
+
+  /* AI chat */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:90;width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--gold),#b8945a);cursor:pointer;box-shadow:0 12px 32px rgba(0,0,0,.45);display:grid;place-items:center;transition:.2s}
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:26px;height:26px;color:#151004}
+  .fab .dot{position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#6fdc6f;border:2px solid #0b0b0e}
+  .chat{position:fixed;right:20px;bottom:92px;z-index:95;width:min(370px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));background:var(--bg2);border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .chat.open{display:flex}
+  .chead{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,rgba(211,176,108,.16),rgba(211,176,108,.05));border-bottom:1px solid var(--line)}
+  .cava{width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#151004;font-weight:700;font-size:.8rem}
+  .chead b{font-size:.9rem;display:block}
+  .chead small{color:#9be29b;font-size:.72rem}
+  .cclose{margin-left:auto;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+  .cbody{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.86rem;white-space:pre-line}
+  .m-bot{background:var(--card2);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .m-user{background:var(--gold);color:#151004;border-bottom-right-radius:4px;align-self:flex-end}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
+  .quick button{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--gold2);font-size:.75rem;padding:7px 12px;border-radius:999px;cursor:pointer}
+  .quick button:hover{border-color:var(--gold)}
+  .cinput{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .cinput input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--text);font-size:.86rem;outline:none}
+  .cinput button{width:42px;height:42px;border-radius:50%;border:none;background:var(--gold);cursor:pointer;display:grid;place-items:center}
+  .cinput button svg{width:18px;height:18px;color:#151004}
+  .typing{display:inline-flex;gap:4px;padding:12px 14px}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:ty 1s infinite}
+  .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+  @keyframes ty{40%{transform:translateY(-4px)}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Демонстрационный концепт · подготовлено SDT для Елены Кунсайтес · тексты и цифры — примеры, заменим на ваши</div>
+
+<header>
+  <div class="wrap hrow">
+    <a class="logo" href="#">
+      <span class="mono">ЕК</span>
+      <span><span class="lname">Елена Кунсайтес</span><br><span class="lsub">Ипотека · Страхование · Право</span></span>
+    </a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#how">Как я работаю</a>
+      <a href="#cases">Результаты</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="hcta" href="#contact">Консультация</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hgrid">
+    <div>
+      <span class="badge">Ипотечный брокер · Страхование · Юрист</span>
+      <h1>Ипотека одобрена, сделка защищена — <em>одним специалистом</em></h1>
+      <p class="hsub">Подбираю ипотечную программу, страхую и юридически сопровождаю сделку под ключ. Вы экономите на ставке и нервах — я беру на себя банки, документы и риски.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://wa.me/70000000000?text=Здравствуйте%2C%20Елена!%20Хочу%20консультацию%20по%20ипотеке" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg>
+          Написать в WhatsApp
+        </a>
+        <a class="btn btn-line" href="https://t.me/username_demo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6ZM8.2 12.9l9.7-6.1c.2-.1.4.2.2.3l-8 7.4c-.3.3-.5.7-.6 1.1l-.3 2.2c0 .3-.5.3-.6 0l-1.1-3.7c-.1-.5.1-1 .7-1.2Z" transform="scale(.92) translate(1,1)"/></svg>
+          Telegram
+        </a>
+        <a class="btn btn-line" href="tel:+70000000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>
+          Позвонить
+        </a>
+      </div>
+      <div class="tchips">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Работаю со всеми крупными банками</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Сопровождение до ключей</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Онлайн по всей России</span>
+      </div>
+    </div>
+    <div class="pcard">
+      <img id="elenaPhoto" src="https://d8j0ntlcm91z4.cloudfront.net/user_3FVTovYDOGsQI8WdGKQu7JbYvoR/hf_20260720_135942_dc2cc0ad-c5ef-42e8-8da5-b6478fbafeba_min.webp" alt="Елена Кунсайтес — ипотечный брокер, страхование, юрист">
+      <div class="pcap">
+        <span><b>Елена Кунсайтес</b><small>Ипотечный брокер · юрист</small></span>
+        <span class="pulse">онлайн · отвечу сегодня</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Услуги</div>
+    <h2 class="h2">Три задачи — одно окно</h2>
+    <p class="lead">Не нужно отдельно искать брокера, страховщика и юриста: веду сделку целиком и отвечаю за результат.</p>
+    <div class="cards3">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5"/></svg></div>
+        <h3>Ипотека под ключ</h3>
+        <ul>
+          <li>Подбор программы и банка под вашу ситуацию</li>
+          <li>Заявки сразу в несколько банков</li>
+          <li>Сложные случаи: ИП, самозанятые, без 2-НДФЛ</li>
+          <li>Снижение ставки и рефинансирование</li>
+        </ul>
+        <div class="price">Первая консультация — бесплатно</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z"/></svg></div>
+        <h3>Страхование</h3>
+        <ul>
+          <li>Ипотечное страхование дешевле банковского</li>
+          <li>Жизнь, имущество, титул</li>
+          <li>Продление полисов без переплат</li>
+          <li>Помощь при страховом случае</li>
+        </ul>
+        <div class="price">Экономия до 40% на полисе</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 7l7-4 7 4M4 21h16M7 7v14M17 7v14"/></svg></div>
+        <h3>Юрист по сделке</h3>
+        <ul>
+          <li>Проверка объекта и продавца</li>
+          <li>Договоры, расчёты, регистрация</li>
+          <li>Защита от рисков и обременений</li>
+          <li>Споры и сопровождение в суде</li>
+        </ul>
+        <div class="price">Сделка под защитой от и до</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Процесс</div>
+    <h2 class="h2">Как я работаю</h2>
+    <p class="lead">Прозрачно и по шагам — вы всегда знаете, что происходит с вашей сделкой.</p>
+    <div class="steps">
+      <div class="step"><b>Консультация</b><p>Разбираем вашу ситуацию, доходы и цель. Честно говорю, что реально.</p></div>
+      <div class="step"><b>Стратегия и заявки</b><p>Подбираю банки и программы, подаю заявки, добиваюсь лучшего одобрения.</p></div>
+      <div class="step"><b>Объект и страховка</b><p>Проверяю объект юридически, оформляю страхование без переплат.</p></div>
+      <div class="step"><b>Сделка и ключи</b><p>Сопровождаю подписание, расчёты и регистрацию — до передачи ключей.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Результаты</div>
+    <h2 class="h2">Примеры задач, которые решаю</h2>
+    <p class="lead">Цифры в примерах — иллюстрация формата. На живой витрине здесь будут ваши реальные кейсы.</p>
+    <div class="cases">
+      <div class="case"><div class="num">−1,2 п.п.</div><b>Снизили ставку по ипотеке</b><p>Семья с двумя детьми: пересобрали заявку, добавили банк-партнёр — одобрение на условиях заметно лучше первоначальных.</p></div>
+      <div class="case"><div class="num">ИП ✓</div><b>Одобрение для ИП без 2-НДФЛ</b><p>Предпринимателю дважды отказывали. Собрали корректный пакет управленческой отчётности — одобрено с адекватной ставкой.</p></div>
+      <div class="case"><div class="num">−38%</div><b>Сэкономили на страховке</b><p>Заменили банковский полис на аккредитованную компанию — та же защита, ощутимо дешевле, банк принял без вопросов.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Отзывы</div>
+    <h2 class="h2">Что говорят клиенты</h2>
+    <p class="lead">Примеры отзывов — на живой витрине подключим ваши реальные, с фото и ссылками.</p>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><p>«Елена довела нашу ипотеку от заявки до ключей. Сами бы мы точно запутались в документах — а тут всё чётко, спокойно и с выгодной ставкой».</p><div class="who">Мария и Сергей · квартира в новостройке</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Мне как ИП отказывали два банка. Елена собрала документы иначе — одобрили. Ещё и страховку сделала дешевле, чем предлагал банк».</p><div class="who">Дмитрий · предприниматель</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Юридическая проверка спасла нас от квартиры с сюрпризом. Нашли другую — Елена сопроводила сделку полностью».</p><div class="who">Анна · вторичное жильё</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <h2 class="serif">Получите план по вашей ипотеке — бесплатно</h2>
+      <p>Напишите в удобный мессенджер или задайте вопрос AI-помощнику — он на связи 24/7.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-gold" href="https://wa.me/70000000000?text=Здравствуйте%2C%20Елена!%20Хочу%20консультацию" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn btn-line" href="https://t.me/username_demo" target="_blank" rel="noopener">Написать в Telegram</a>
+        <button class="btn btn-line" onclick="openChat()">Спросить AI-помощника</button>
+      </div>
+      <div class="note">Это демонстрационная витрина: телефоны и ссылки — заглушки, подключим ваши за один день.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Елена Кунсайтес · ипотека, страхование, юридическое сопровождение<br><br>
+    <b>Демо-витрина создана SDT — Shirokov Deus Technology.</b> Такая же под ваш бренд — за 48 часов.
+  </div>
+</footer>
+
+<!-- AI assistant -->
+<button class="fab" onclick="toggleChat()" aria-label="AI-помощник">
+  <span class="dot"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
+</button>
+
+<div class="chat" id="chat">
+  <div class="chead">
+    <div class="cava">AI</div>
+    <div><b>Помощник Елены</b><small>онлайн · отвечает мгновенно</small></div>
+    <button class="cclose" onclick="toggleChat()">×</button>
+  </div>
+  <div class="cbody" id="cbody"></div>
+  <div class="quick" id="quick"></div>
+  <div class="cinput">
+    <input id="cinp" type="text" placeholder="Ваш вопрос про ипотеку…" onkeydown="if(event.key==='Enter')send()">
+    <button onclick="send()" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/></svg></button>
+  </div>
+</div>
+
+<script>
+const QA = [
+  {q:"Какой нужен первый взнос?", k:["взнос","первонач"], a:"Обычно банки просят от 15–20% стоимости жилья, но есть программы от 10% и варианты с материнским капиталом в качестве взноса.\n\nЕлена подберёт банк под ваш размер накоплений — напишите ей в WhatsApp, это бесплатно."},
+  {q:"Одобрят ли меня?", k:["одобр","откаж","отказ","шанс"], a:"Шансы на одобрение зависят от дохода, кредитной истории и выбранного банка. Даже после отказов часто можно получить одобрение — Елена знает требования разных банков и «пересобирает» заявку правильно.\n\nОпишите ситуацию Елене напрямую — она честно скажет, что реально."},
+  {q:"Я ИП / самозанятый", k:["ип","самозанят","без справ","2-ндфл","ндфл"], a:"Для ИП и самозанятых есть банки, которые принимают управленческую отчётность и выписки вместо 2-НДФЛ. Это одна из специализаций Елены — таких клиентов она ведёт постоянно.\n\nНапишите ей в WhatsApp — подскажет, какие документы подготовить."},
+  {q:"Сколько стоят услуги?", k:["стоит","цена","стоимост","сколько","тариф","оплат"], a:"Первая консультация — бесплатно. Стоимость сопровождения зависит от задачи (ипотека, страховка, юрсопровождение или всё вместе) и обсуждается заранее, без скрытых платежей.\n\nЧасто экономия на ставке и страховке больше, чем стоимость услуг."},
+  {q:"Какие документы нужны?", k:["документ","справк","пакет"], a:"Базово: паспорт, СНИЛС, подтверждение дохода и занятости. Для ИП — налоговая отчётность. Точный список зависит от банка и программы.\n\nЕлена пришлёт персональный чек-лист после короткой консультации."},
+  {k:["страхов","полис"], a:"Ипотечное страхование можно оформить не в банке, а в аккредитованной компании — обычно это на 20–40% дешевле при той же защите. Елена подберёт полис и оформит всё сама."},
+  {k:["рефинанс","ставк"], a:"Если ваша текущая ставка выше рыночной — рефинансирование может заметно снизить платёж. Елена посчитает выгоду бесплатно: пришлите ей параметры кредита в WhatsApp."},
+  {k:["привет","здравств","добрый"], a:"Здравствуйте! Я AI-помощник Елены Кунсайтес. Отвечу на вопросы про ипотеку, страхование и юридическое сопровождение сделки. Что вас интересует?"}
+];
+const FALLBACK = "Хороший вопрос! Точнее всего на него ответит сама Елена — напишите ей в WhatsApp или Telegram (кнопки выше), обычно отвечает в течение часа.\n\nА я могу подсказать по первому взносу, одобрению, документам, страховке и стоимости услуг.";
+const cbody = document.getElementById('cbody');
+const quick = document.getElementById('quick');
+let opened = false;
+
+function toggleChat(){
+  const c = document.getElementById('chat');
+  c.classList.toggle('open');
+  if(c.classList.contains('open') && !opened){opened = true; botSay("Здравствуйте! 👋 Я AI-помощник Елены.\nПодскажу по ипотеке, страхованию и юридическим вопросам сделки — или сразу соединю с Еленой.\n\nВыберите вопрос или напишите свой:"); renderQuick();}
+}
+function openChat(){const c=document.getElementById('chat'); if(!c.classList.contains('open')) toggleChat(); c.scrollIntoView({block:'end'});}
+function renderQuick(){
+  quick.innerHTML='';
+  QA.filter(x=>x.q).forEach(x=>{const b=document.createElement('button');b.textContent=x.q;b.onclick=()=>{userSay(x.q);answer(x.q)};quick.appendChild(b)});
+}
+function el(cls,txt){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function botSay(t){el('m-bot',t)}
+function userSay(t){el('m-user',t)}
+function typing(){const d=document.createElement('div');d.className='typing';d.innerHTML='<i></i><i></i><i></i>';cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function answer(text){
+  const t=typing();
+  setTimeout(()=>{
+    t.remove();
+    const low=text.toLowerCase();
+    const hit=QA.find(x=>x.k.some(k=>low.includes(k)));
+    botSay(hit?hit.a:FALLBACK);
+  }, 700+Math.random()*600);
+}
+function send(){
+  const inp=document.getElementById('cinp');
+  const v=inp.value.trim();
+  if(!v) return;
+  inp.value='';
+  userSay(v);
+  answer(v);
+}
+</script>
+</body>
+</html>
