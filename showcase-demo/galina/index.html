@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<link rel="preload" as="image" href="portrait.webp">
 <meta http-equiv="refresh" content="0; url=https://shirokovdeustechnology.com/showcase/galina/">
 <link rel="canonical" href="https://shirokovdeustechnology.com/showcase/galina/">
 <meta charset="UTF-8">
@@ -235,7 +236,7 @@
       </div>
     </div>
     <div class="pcard">
-      <img id="elenaPhoto" src="portrait.webp" alt="Галина Перейма — эксперт по недвижимости Черноморского побережья">
+      <img id="elenaPhoto" fetchpriority="high" decoding="async" src="portrait.webp" alt="Галина Перейма — эксперт по недвижимости Черноморского побережья">
       <div class="pcap">
         <span><b>Галина Перейма</b><small>Недвижимость · Черноморское побережье</small></span>
         <span class="pulse">онлайн · отвечу сегодня</span>
@@ -294,12 +295,12 @@
     <h2 class="h2">Актуальные предложения побережья</h2>
     <p class="lead">Примеры объектов из подборок Галины — на живой витрине здесь будут ваши актуальные предложения.</p>
     <div class="objgrid">
-      <div class="obj"><img src="obj-1.webp" alt="Вилла «Панорама» · Сочи" loading="lazy"><div class="ob"><b>Вилла «Панорама» · Сочи</b><div class="op">185 млн ₽</div><div class="om">420 м² · бассейн · вид на море</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%201" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
-      <div class="obj"><img src="obj-2.webp" alt="Пентхаус на первой линии" loading="lazy"><div class="ob"><b>Пентхаус на первой линии</b><div class="op">96 млн ₽</div><div class="om">210 м² · терраса · Сириус</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%202" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
-      <div class="obj"><img src="obj-3.webp" alt="Резиденция у моря" loading="lazy"><div class="ob"><b>Резиденция у моря</b><div class="op">240 млн ₽</div><div class="om">580 м² · участок 14 соток</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%203" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
-      <div class="obj"><img src="obj-4.webp" alt="Апартаменты в клубном доме" loading="lazy"><div class="ob"><b>Апартаменты в клубном доме</b><div class="op">38 млн ₽</div><div class="om">78 м² · Геленджик</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%204" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
-      <div class="obj"><img src="obj-5.webp" alt="ЖК на первой линии" loading="lazy"><div class="ob"><b>ЖК на первой линии</b><div class="op">от 21 млн ₽</div><div class="om">сдача 2027 · Анапа</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%205" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
-      <div class="obj"><img src="obj-6.webp" alt="Видовая квартира с дизайнерским ремонтом" loading="lazy"><div class="ob"><b>Видовая квартира с дизайнерским ремонтом</b><div class="op">47 млн ₽</div><div class="om">96 м² · Сочи</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%206" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-1.webp" alt="Вилла «Панорама» · Сочи" decoding="async" loading="lazy"><div class="ob"><b>Вилла «Панорама» · Сочи</b><div class="op">185 млн ₽</div><div class="om">420 м² · бассейн · вид на море</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%201" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-2.webp" alt="Пентхаус на первой линии" decoding="async" loading="lazy"><div class="ob"><b>Пентхаус на первой линии</b><div class="op">96 млн ₽</div><div class="om">210 м² · терраса · Сириус</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%202" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-3.webp" alt="Резиденция у моря" decoding="async" loading="lazy"><div class="ob"><b>Резиденция у моря</b><div class="op">240 млн ₽</div><div class="om">580 м² · участок 14 соток</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%203" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-4.webp" alt="Апартаменты в клубном доме" decoding="async" loading="lazy"><div class="ob"><b>Апартаменты в клубном доме</b><div class="op">38 млн ₽</div><div class="om">78 м² · Геленджик</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%204" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-5.webp" alt="ЖК на первой линии" decoding="async" loading="lazy"><div class="ob"><b>ЖК на первой линии</b><div class="op">от 21 млн ₽</div><div class="om">сдача 2027 · Анапа</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%205" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
+      <div class="obj"><img src="obj-6.webp" alt="Видовая квартира с дизайнерским ремонтом" decoding="async" loading="lazy"><div class="ob"><b>Видовая квартира с дизайнерским ремонтом</b><div class="op">47 млн ₽</div><div class="om">96 м² · Сочи</div><a href="https://wa.me/79882388108?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%206" target="_blank" rel="noopener">Записаться на показ →</a></div></div>
     </div>
   </div>
 </section>
