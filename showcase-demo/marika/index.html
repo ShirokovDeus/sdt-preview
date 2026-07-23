@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Донна Марика — недвижимость Батуми | Квартиры, апартаменты, инвестиции</title>
+<link rel="preload" as="image" href="portrait.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0e; --bg2:#111116; --card:#16161c; --card2:#1b1b23;
+    --gold:#d3b06c; --gold2:#e8cf9a; --text:#f2f0ea; --muted:#b9b6ae; --line:rgba(211,176,108,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:clip}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+
+  /* header */
+  header{position:sticky;transform:translateZ(0);top:0;z-index:50;background:rgba(11,11,14,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .mono{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600;font-size:.9rem;letter-spacing:.05em}
+  .lname{font-weight:600;font-size:.95rem;letter-spacing:.02em}
+  .lsub{font-size:.68rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  nav{display:flex;gap:22px}
+  nav a{color:var(--muted);text-decoration:none;font-size:.88rem}
+  nav a:hover{color:var(--gold2)}
+  .hcta{background:var(--gold);color:#151004;font-weight:600;font-size:.85rem;padding:10px 18px;border-radius:999px;text-decoration:none;white-space:nowrap}
+  @media(max-width:820px){nav{display:none}}
+
+  /* demo ribbon */
+  .ribbon{background:linear-gradient(90deg,rgba(211,176,108,.12),rgba(211,176,108,.03));border-bottom:1px solid var(--line);text-align:center;font-size:.72rem;color:var(--gold2);letter-spacing:.08em;padding:6px 12px;text-transform:uppercase}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 60px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(211,176,108,.14),transparent 60%),
+    radial-gradient(700px 500px at -10% 110%,rgba(70,60,120,.18),transparent 60%)}
+  .hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:820px){.hgrid{grid-template-columns:1fr;gap:36px}}
+  .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.78rem;color:var(--gold2);letter-spacing:.06em;margin-bottom:22px}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.16;font-weight:600;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hsub{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;border:none;border-radius:999px;padding:13px 22px;font-size:.93rem;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s,color .25s}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn:hover::after{left:140%}
+  .btn:active{transform:translateY(1px) scale(.985)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,#a8873f);color:#151004;box-shadow:0 10px 26px rgba(211,176,108,.32),inset 0 1px 0 rgba(255,255,255,.45)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(211,176,108,.48)}
+  .btn-line{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .btn-line:hover{transform:translateY(-2px);border-color:var(--gold);color:var(--gold2);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+  .icb{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+  .icb svg{width:15px;height:15px;color:#fff}
+  .icb.wa{background:#25D366}
+  .icb.tg{background:#2AABEE}
+  .icb.ph{background:#151004}.icb.ph svg{color:var(--gold)}
+
+  /* mobile action bar */
+  .mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;display:none;gap:8px;background:rgba(14,14,19,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 6px;border-radius:12px;font-size:.8rem;font-weight:700;text-decoration:none}
+  .mbar svg{width:15px;height:15px}
+  .mbar .m-wa{background:#25D366;color:#fff}
+  .mbar .m-tg{background:#2AABEE;color:#fff}
+  .mbar .m-ph{background:var(--gold);color:#151004}
+  @media(max-width:640px){
+    .mbar.show{display:flex}
+    .fab{bottom:88px}
+    .chat{bottom:158px}
+    .teaser{bottom:160px}
+  }
+
+  /* chat teaser */
+  .teaser{position:fixed;right:20px;bottom:94px;z-index:85;background:var(--bg2);border:1px solid var(--line);border-radius:16px 16px 4px 16px;padding:12px 34px 12px 16px;max-width:250px;font-size:.84rem;box-shadow:0 18px 46px rgba(0,0,0,.55);display:none;animation:tin .45s ease;cursor:pointer}
+  .teaser.show{display:block}
+  .teaser b{color:var(--gold2)}
+  .teaser .tx{position:absolute;top:6px;right:10px;color:var(--muted);font-size:1rem}
+  @keyframes tin{from{opacity:0;transform:translateY(10px)}}
+  .tchips{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.85rem}
+  .tchips span{display:inline-flex;align-items:center;gap:7px}
+  .tchips svg{width:15px;height:15px;color:var(--gold)}
+
+  .pcard{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .pcard img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+  .pcap{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(12,12,16,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .pcap b{font-size:.95rem;display:block}
+  .pcap small{color:var(--muted);font-size:.75rem}
+  .pulse{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;color:#9be29b;white-space:nowrap}
+  .pulse::before{content:"";width:7px;height:7px;border-radius:50%;background:#6fdc6f;animation:pl 2s ease-in-out infinite}
+  @keyframes pl{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* sections */
+  section{padding:64px 0}
+  .eyebrow{color:var(--gold);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin-bottom:12px}
+  .h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:600;text-align:center;margin-bottom:14px}
+  .lead{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 42px}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cards3{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card .ic{width:44px;height:44px;border-radius:12px;background:rgba(211,176,108,.12);display:grid;place-items:center;margin-bottom:16px}
+  .card .ic svg{width:22px;height:22px;color:var(--gold)}
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card ul{list-style:none;margin:0 0 14px}
+  .card li{color:var(--muted);font-size:.9rem;padding:5px 0 5px 24px;position:relative}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:.85rem}
+  .price{color:var(--gold2);font-size:.85rem}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
+  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;counter-increment:st}
+  .step::before{content:counter(st,decimal-leading-zero);display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px}
+  .step b{display:block;margin-bottom:6px;font-size:.98rem}
+  .step p{color:var(--muted);font-size:.86rem}
+
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cases{grid-template-columns:1fr}}
+  .case{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px}
+  .case .num{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.7rem;margin-bottom:6px}
+  .case b{display:block;font-size:.95rem;margin-bottom:8px}
+  .case p{color:var(--muted);font-size:.86rem}
+
+  .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.revs{grid-template-columns:1fr}}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px;font-size:.9rem}
+  .rev p{color:var(--text);font-size:.9rem;margin-bottom:14px}
+  .rev .who{color:var(--muted);font-size:.8rem}
+
+  .final{background:linear-gradient(160deg,rgba(211,176,108,.10),rgba(70,60,120,.10));border:1px solid var(--line);border-radius:24px;padding:48px 30px;text-align:center}
+  .final h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:12px}
+  .final p{color:var(--muted);margin-bottom:26px}
+  .note{color:var(--muted);font-size:.75rem;margin-top:18px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.8rem;text-align:center}
+  footer b{color:var(--gold2)}
+
+  /* AI chat */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:90;width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--gold),#b8945a);cursor:pointer;box-shadow:0 12px 32px rgba(0,0,0,.45);display:grid;place-items:center;transition:.2s}
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:26px;height:26px;color:#151004}
+  .fab .dot{position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#6fdc6f;border:2px solid #0b0b0e}
+  .chat{position:fixed;right:20px;bottom:92px;z-index:95;width:min(370px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));background:var(--bg2);border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .chat.open{display:flex}
+  .chead{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,rgba(211,176,108,.16),rgba(211,176,108,.05));border-bottom:1px solid var(--line)}
+  .cava{width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#151004;font-weight:700;font-size:.8rem}
+  .chead b{font-size:.9rem;display:block}
+  .chead small{color:#9be29b;font-size:.72rem}
+  .cclose{margin-left:auto;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+  .cbody{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.86rem;white-space:pre-line}
+  .m-bot{background:var(--card2);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .m-user{background:var(--gold);color:#151004;border-bottom-right-radius:4px;align-self:flex-end}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
+  .quick button{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--gold2);font-size:.75rem;padding:7px 12px;border-radius:999px;cursor:pointer}
+  .quick button:hover{border-color:var(--gold)}
+  .cinput{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .cinput input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--text);font-size:.86rem;outline:none}
+  .cinput button{width:42px;height:42px;border-radius:50%;border:none;background:var(--gold);cursor:pointer;display:grid;place-items:center}
+  .cinput button svg{width:18px;height:18px;color:#151004}
+  .typing{display:inline-flex;gap:4px;padding:12px 14px}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:ty 1s infinite}
+  .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+  @keyframes ty{40%{transform:translateY(-4px)}}
+
+  /* objects catalog */
+  .objgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.objgrid{grid-template-columns:1fr}}
+  .obj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .obj:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .obj img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .obj .ob{padding:18px}
+  .obj b{display:block;font-size:1rem;margin-bottom:6px}
+  .obj .op{color:var(--gold2);font-weight:700;margin-bottom:4px}
+  .obj .om{color:var(--muted);font-size:.82rem;margin-bottom:12px}
+  .obj a{display:inline-flex;align-items:center;gap:6px;color:var(--gold2);font-size:.85rem;text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+  .obj a:hover{border-color:var(--gold)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Демонстрационный концепт · подготовлено SDT для Донны Марики · тексты и цифры — примеры, заменим на ваши</div>
+
+<header>
+  <div class="wrap hrow">
+    <a class="logo" href="#">
+      <span class="mono">ДМ</span>
+      <span><span class="lname">Донна Марика</span><br><span class="lsub">Недвижимость · Батуми</span></span>
+    </a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#objects">Объекты</a>
+      <a href="#how">Как я работаю</a>
+      <a href="#cases">Результаты</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="hcta" href="#contact">Консультация</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hgrid">
+    <div>
+      <span class="badge">Эксперт по недвижимости Батуми</span>
+      <h1>Ваша квартира у моря в Батуми — <em>от студии до пентхауса</em></h1>
+      <p class="hsub">Подбираю новостройки и готовые квартиры Батуми, проверяю застройщика и веду сделку дистанционно — от брони до ключей. Помогаю купить для жизни, отдыха или дохода от аренды.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://wa.me/79384633301?text=Здравствуйте%2C%20Марика!%20Хочу%20подобрать%20объект" target="_blank" rel="noopener">
+          <span class="icb wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg></span>
+          Написать в WhatsApp
+        </a>
+        <a class="btn btn-line" href="https://t.me/+79384633301" target="_blank" rel="noopener">
+          <span class="icb tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6ZM8.2 12.9l9.7-6.1c.2-.1.4.2.2.3l-8 7.4c-.3.3-.5.7-.6 1.1l-.3 2.2c0 .3-.5.3-.6 0l-1.1-3.7c-.1-.5.1-1 .7-1.2Z" transform="scale(.92) translate(1,1)"/></svg></span>
+          Telegram
+        </a>
+        <a class="btn btn-line" href="tel:+79384633301">
+          <span class="icb ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg></span>
+          Позвонить
+        </a>
+      </div>
+      <div class="tchips">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Дистанционные сделки под ключ</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Рассрочка 0% от застройщиков</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Только проверенные застройщики</span>
+      </div>
+    </div>
+    <div class="pcard">
+      <img id="elenaPhoto" fetchpriority="high" decoding="async" src="portrait.webp" alt="Донна Марика — эксперт по недвижимости Батуми">
+      <div class="pcap">
+        <span><b>Донна Марика</b><small>Недвижимость · Батуми</small></span>
+        <span class="pulse">онлайн · отвечу сегодня</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Услуги</div>
+    <h2 class="h2">Покупка в Батуми — без перелётов и рисков</h2>
+    <p class="lead">Вы можете купить квартиру у моря, не выходя из дома: показы по видео, проверка застройщика, сделка дистанционно.</p>
+    <div class="cards3">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5"/></svg></div>
+        <h3>Подбор под вашу задачу</h3>
+        <ul>
+          <li>Студии, апартаменты и пентхаусы у моря</li>
+          <li>Новостройки первой линии и сданные дома</li>
+          <li>Подборка под бюджет — за 24 часа</li>
+          <li>Онлайн-показы по видео в удобное время</li>
+        </ul>
+        <div class="price">Первая подборка — бесплатно</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20V10M12 20V4M18 20v-6"/></svg></div>
+        <h3>Инвестиции и доход</h3>
+        <ul>
+          <li>Апарт-отели с управлением и доходом от аренды</li>
+          <li>Покупка на старте стройки — рост цены к сдаче</li>
+          <li>Рассрочка 0% от застройщиков</li>
+          <li>Честный расчёт доходности, а не обещания</li>
+        </ul>
+        <div class="price">Цифры по каждому объекту — до покупки</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z"/></svg></div>
+        <h3>Сопровождение сделки</h3>
+        <ul>
+          <li>Проверка застройщика, документов и договора</li>
+          <li>Сделка дистанционно — по доверенности</li>
+          <li>Помощь с оформлением и переводом документов</li>
+          <li>На связи и после сделки: ремонт, аренда, управление</li>
+        </ul>
+        <div class="price">От брони до ключей — с вами на каждом шаге</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="objects" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Объекты</div>
+    <h2 class="h2">Актуальные предложения Батуми</h2>
+    <p class="lead">Примеры форматов и цен — под ваш запрос соберу персональную подборку с планировками и видео.</p>
+    <div class="objgrid">
+      <div class="obj"><img src="obj-1.webp" alt="Апартаменты первой линии — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Апартаменты первой линии</b>
+          <div class="op">от $65 000</div>
+          <div class="om">новостройка у моря · вид на Чёрное море</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-2.webp" alt="Студия в апарт-отеле — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Студия в апарт-отеле</b>
+          <div class="op">от $48 000</div>
+          <div class="om">доход от аренды · управление под ключ</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-3.webp" alt="Пентхаус с террасой — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Пентхаус с террасой</b>
+          <div class="op">$210 000</div>
+          <div class="om">панорама моря и гор Аджарии</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-4.webp" alt="Квартира с ремонтом — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Квартира с ремонтом</b>
+          <div class="op">от $85 000</div>
+          <div class="om">сданный дом · заезжай и живи</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-5.webp" alt="Таунхаус в Гонио — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Таунхаус в Гонио</b>
+          <div class="op">$175 000</div>
+          <div class="om">свой сад · море в 10 минутах</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-6.webp" alt="Старт продаж от застройщика — Батуми" loading="lazy" decoding="async">
+        <div class="ob"><b>Старт продаж от застройщика</b>
+          <div class="op">от $1 400/м²</div>
+          <div class="om">рассрочка 0% до конца стройки</div>
+          <a href="#" onclick="openChat();return false">Записаться на показ →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="how" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Процесс</div>
+    <h2 class="h2">Как проходит покупка</h2>
+    <p class="lead">Прозрачно и по шагам — большинство моих клиентов покупают, не прилетая в Грузию.</p>
+    <div class="steps">
+      <div class="step"><b>Запрос</b><p>Разбираем цель и бюджет: для жизни, отдыха или дохода. В тот же день — первая подборка.</p></div>
+      <div class="step"><b>Онлайн-показы</b><p>Видео-обзоры объектов и района, планировки, реальные цены застройщиков без накруток.</p></div>
+      <div class="step"><b>Проверка</b><p>Проверяю застройщика, документы и договор. Вы знаете все условия до внесения денег.</p></div>
+      <div class="step"><b>Сделка и ключи</b><p>Бронь, договор, регистрация — лично или дистанционно. Дальше помогаю с ремонтом и арендой.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Результаты</div>
+    <h2 class="h2">Примеры задач, которые решаю</h2>
+    <p class="lead">Цифры в примерах — иллюстрация формата. На живой витрине здесь будут ваши реальные кейсы.</p>
+    <div class="cases">
+      <div class="case"><div class="num">дистанционно</div><b>Сделка без прилёта</b><p>Клиентка из Москвы выбрала апартаменты по видео-показам. Договор, оплата и регистрация — удалённо, ключи забрала управляющая компания.</p></div>
+      <div class="case"><div class="num">+38%</div><b>Рост цены к сдаче</b><p>Студия куплена на старте продаж в рассрочку 0%. К сдаче дома цена за метр выросла — квартира заработала ещё до заселения.</p></div>
+      <div class="case"><div class="num">0%</div><b>Рассрочка от застройщика</b><p>Апартаменты первой линии: 30% первый взнос, остаток равными платежами до конца стройки — без банка и процентов.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Отзывы</div>
+    <h2 class="h2">Что говорят клиенты</h2>
+    <p class="lead">Примеры отзывов — на живой витрине подключим ваши реальные, с фото и ссылками.</p>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><p>«Покупали студию из Екатеринбурга, в Батуми были один раз в отпуске. Марика показала всё по видео, проверила застройщика — сделку закрыли за неделю».</p><div class="who">Павел и Юлия · дистанционная покупка</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Искала апартаменты под аренду. Марика отговорила от "красивого" варианта и показала цифры по трём другим. Взяла скучный — и он реально приносит доход».</p><div class="who">Екатерина · инвестиции</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Боялись покупать на этапе стройки в другой стране. Марика разложила договор по пунктам и показала историю застройщика. Дом сдали в срок».</p><div class="who">Армен · новостройка</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«После сделки Марика не пропала: помогла с ремонтом, мебелью и нашла управляющую компанию. Квартира сдаётся, пока мы дома».</p><div class="who">Ольга и Сергей · апарт-отель</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Рассрочка 0% звучала как реклама, но всё подтвердилось: платим равными частями застройщику, никаких банков и процентов».</p><div class="who">Денис · рассрочка</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Переезжали с детьми на зимовку и остались. Марика подобрала квартиру у школы, помогла с документами. Чувствуешь, что тебя не бросят».</p><div class="who">Наталия · переезд</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <h2 class="serif">Получите подборку квартир Батуми под ваш бюджет — бесплатно</h2>
+      <p>Напишите в удобный мессенджер или задайте вопрос AI-помощнику — он на связи 24/7.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-gold" href="https://wa.me/79384633301?text=Здравствуйте%2C%20Марика!%20Хочу%20подборку" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn btn-line" href="https://t.me/+79384633301" target="_blank" rel="noopener">Написать в Telegram</a>
+        <button class="btn btn-line" onclick="openChat()">Спросить AI-помощника</button>
+      </div>
+      <div class="note">Это демонстрационная витрина: телефоны и ссылки — заглушки, подключим ваши за один день.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Донна Марика · недвижимость Батуми<br><br>
+    <b>Демо-витрина создана SDT — Shirokov Deus Technology.</b> Такая же под ваш бренд — за 48 часов.
+  </div>
+</footer>
+
+<!-- mobile action bar -->
+<div class="mbar" id="mbar">
+  <a class="m-wa" href="https://wa.me/79384633301?text=Здравствуйте%2C%20Марика!" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>WhatsApp</a>
+  <a class="m-tg" href="https://t.me/+79384633301" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6Z"/></svg>Telegram</a>
+  <a class="m-ph" href="tel:+79384633301"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>Звонок</a>
+</div>
+
+<!-- chat teaser -->
+<div class="teaser" id="teaser" onclick="teaserOpen(event)">
+  <span class="tx" onclick="teaserClose(event)">×</span>
+  <b>Ищете дом у моря?</b><br>Я AI-помощник Марики — отвечу за минуту, даже ночью 🌙
+</div>
+
+<!-- AI assistant -->
+<button class="fab" onclick="toggleChat()" aria-label="AI-помощник">
+  <span class="dot"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
+</button>
+
+<div class="chat" id="chat">
+  <div class="chead">
+    <img class="cava" src="portrait.webp" alt="Донна Марика — недвижимость Батуми" style="object-fit:cover;object-position:top">
+    <div><b>AI-помощник Марике</b><small>онлайн · отвечает мгновенно</small></div>
+    <button class="cclose" onclick="toggleChat()">×</button>
+  </div>
+  <div class="cbody" id="cbody"></div>
+  <div class="quick" id="quick"></div>
+  <div class="cinput">
+    <input id="cinp" type="text" placeholder="Ваш вопрос про Батуми…" onkeydown="if(event.key==='Enter')send()">
+    <button onclick="send()" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/></svg></button>
+  </div>
+</div>
+
+<script>
+const QA = [
+  {q:"Какой бюджет нужен для Батуми?", k:["бюджет","сколько стоит","цен"], a:"Студии в строящихся домах — от $40–50 тыс., апартаменты у моря — от $65 тыс., квартиры с ремонтом в сданных домах — от $80–90 тыс., пентхаусы — от $200 тыс.\n\nНапишите Марике бюджет и цель — пришлёт подборку с реальными ценами застройщиков."},
+  {q:"Можно купить дистанционно?", k:["дистанц","удалённо","онлайн","не прилет","из россии","из москвы"], a:"Да, это обычная практика: видео-показы, проверка документов, договор и регистрация по доверенности. Большинство клиентов Марики покупают, не прилетая.\n\nОформление сделки в Грузии простое и быстрое — Марика расскажет по шагам."},
+  {q:"Что за рассрочка 0%?", k:["рассрочк","в кредит","ипотек","платеж"], a:"Застройщики Батуми дают беспроцентную рассрочку до конца строительства: обычно 30% первый взнос, остаток равными частями. Без банка, справок и процентов.\n\nМарика подскажет, у каких застройщиков сейчас лучшие условия."},
+  {q:"Какая доходность от аренды?", k:["доход","аренд","окупа","инвест","сдав"], a:"Апартаменты у моря сдаются туристам в сезон и долгосрочно зимой; апарт-отели работают через управляющую компанию — доход без вашего участия.\n\nМарика считает доходность по каждому объекту честно, с учётом загрузки и расходов — цифры до покупки, а не после."},
+  {q:"Как проверяется застройщик?", k:["застройщик","провер","документ","обман","риск"], a:"Марика работает только с проверенными застройщиками: история сданных объектов, документы на землю, разрешения, условия договора.\n\nЕсли с объектом что-то не так — вы узнаете об этом до внесения денег."},
+  {q:"Как проходит показ?", k:["показ","посмотреть","встреч"], a:"Онлайн — видео-обзор объекта и района в удобное время, или лично, если вы в Батуми. Перед показом вы получаете планировки, цены и условия.\n\nОставьте номер — Марика согласует время."},
+  {k:["налог","оформлен","внж","виза","гражданств"], a:"Оформление недвижимости в Грузии — одно из самых простых в мире, налога на покупку нет. По вопросам проживания и документов Марика подскажет на консультации — честно и без обещаний «золотых паспортов»."},
+  {k:["стоит","услуг","комисс","оплат"], a:"Для покупателя подбор и сопровождение — бесплатно: Марика получает вознаграждение от застройщика, цена для вас не меняется. По вторичке условия обсуждаются заранее."},
+  {k:["привет","здравств","добрый"], a:"Здравствуйте! Я AI-помощник Донны Марики. Отвечу на вопросы о недвижимости Батуми: цены, рассрочка, доходность, дистанционные сделки. Что вас интересует?"}
+];
+const FALLBACK = "Хороший вопрос! Точнее всего ответит сама Марика — напишите ей в WhatsApp или Telegram (кнопки выше), обычно отвечает в течение часа.\n\nА я могу подсказать по ценам, рассрочке, доходности и дистанционным сделкам.";
+const cbody = document.getElementById('cbody');
+const quick = document.getElementById('quick');
+let opened = false;
+
+let phoneMode = false;
+function toggleChat(){
+  const c = document.getElementById('chat');
+  c.classList.toggle('open');
+  document.getElementById('teaser').classList.remove('show');
+  if(c.classList.contains('open') && !opened){opened = true; botSay("Здравствуйте! 👋 Я AI-помощник Марики.\nПодскажу по объектам Батуми, ценам, рассрочке и инвестициям — или сразу соединю с Марикой.\n\nВыберите вопрос или напишите свой:"); renderQuick();}
+}
+function teaserOpen(e){ if(e.target.classList.contains('tx')) return; toggleChat(); }
+function teaserClose(e){ e.stopPropagation(); document.getElementById('teaser').classList.remove('show'); }
+setTimeout(()=>{ if(!opened) document.getElementById('teaser').classList.add('show'); }, 2600);
+window.addEventListener('scroll',()=>{
+  const b=document.getElementById('mbar');
+  if(window.scrollY>560) b.classList.add('show'); else b.classList.remove('show');
+},{passive:true});
+function askPhone(){
+  phoneMode = true;
+  botSay("Оставьте номер телефона — Марика перезвонит в удобное для вас время 📞");
+}
+function openChat(){const c=document.getElementById('chat'); if(!c.classList.contains('open')) toggleChat(); c.scrollIntoView({block:'end'});}
+function renderQuick(){
+  quick.innerHTML='';
+  QA.filter(x=>x.q).forEach(x=>{const b=document.createElement('button');b.textContent=x.q;b.onclick=()=>{userSay(x.q);answer(x.q)};quick.appendChild(b)});
+  const p=document.createElement('button');p.textContent='📞 Оставить номер';p.style.borderColor='var(--gold)';p.onclick=()=>{userSay('Хочу, чтобы мне перезвонили');askPhone()};quick.appendChild(p);
+}
+function el(cls,txt){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function botSay(t){el('m-bot',t)}
+function userSay(t){el('m-user',t)}
+function typing(){const d=document.createElement('div');d.className='typing';d.innerHTML='<i></i><i></i><i></i>';cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function answer(text){
+  const t=typing();
+  setTimeout(()=>{
+    t.remove();
+    const low=text.toLowerCase();
+    const hit=QA.find(x=>x.k.some(k=>low.includes(k)));
+    botSay(hit?hit.a:FALLBACK);
+  }, 700+Math.random()*600);
+}
+function send(){
+  const inp=document.getElementById('cinp');
+  const v=inp.value.trim();
+  if(!v) return;
+  inp.value='';
+  userSay(v);
+  if(phoneMode){
+    phoneMode=false;
+    const digits=v.replace(/\D/g,'');
+    const t=typing();
+    setTimeout(()=>{
+      t.remove();
+      if(digits.length>=10){
+        botSay("Спасибо, номер записала! ✅ Марика свяжется с вами в ближайшее рабочее время.\n\n(Это демо-витрина: заявка никуда не отправлена. На живой версии она мгновенно придёт Марике в Telegram.)");
+      } else {
+        botSay("Кажется, в номере не хватает цифр 🙂 Напишите его в формате +7 900 000-00-00 — или просто нажмите кнопку WhatsApp выше.");
+        phoneMode=true;
+      }
+    },800);
+    return;
+  }
+  answer(v);
+}
+</script>
+</body>
+</html>
