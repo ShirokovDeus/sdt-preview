@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Сергей Храменков — маркетинг недвижимости и видеопродакшн · Сочи</title>
+<link rel="preload" as="image" href="portrait.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0e; --bg2:#111116; --card:#16161c; --card2:#1b1b23;
+    --gold:#d3b06c; --gold2:#e8cf9a; --text:#f2f0ea; --muted:#b9b6ae; --line:rgba(211,176,108,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:clip}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+
+  /* header */
+  header{position:sticky;transform:translateZ(0);top:0;z-index:50;background:rgba(11,11,14,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .mono{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600;font-size:.9rem;letter-spacing:.05em}
+  .lname{font-weight:600;font-size:.95rem;letter-spacing:.02em}
+  .lsub{font-size:.68rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  nav{display:flex;gap:22px}
+  nav a{color:var(--muted);text-decoration:none;font-size:.88rem}
+  nav a:hover{color:var(--gold2)}
+  .hcta{background:var(--gold);color:#151004;font-weight:600;font-size:.85rem;padding:10px 18px;border-radius:999px;text-decoration:none;white-space:nowrap}
+  @media(max-width:820px){nav{display:none}}
+
+  /* demo ribbon */
+  .ribbon{background:linear-gradient(90deg,rgba(211,176,108,.12),rgba(211,176,108,.03));border-bottom:1px solid var(--line);text-align:center;font-size:.72rem;color:var(--gold2);letter-spacing:.08em;padding:6px 12px;text-transform:uppercase}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 60px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(211,176,108,.14),transparent 60%),
+    radial-gradient(700px 500px at -10% 110%,rgba(70,60,120,.18),transparent 60%)}
+  .hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:820px){.hgrid{grid-template-columns:1fr;gap:36px}}
+  .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.78rem;color:var(--gold2);letter-spacing:.06em;margin-bottom:22px}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.16;font-weight:600;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hsub{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;border:none;border-radius:999px;padding:13px 22px;font-size:.93rem;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s,color .25s}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn:hover::after{left:140%}
+  .btn:active{transform:translateY(1px) scale(.985)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,#a8873f);color:#151004;box-shadow:0 10px 26px rgba(211,176,108,.32),inset 0 1px 0 rgba(255,255,255,.45)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(211,176,108,.48)}
+  .btn-line{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .btn-line:hover{transform:translateY(-2px);border-color:var(--gold);color:var(--gold2);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+  .icb{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+  .icb svg{width:15px;height:15px;color:#fff}
+  .icb.wa{background:#25D366}
+  .icb.tg{background:#2AABEE}
+  .icb.ph{background:#151004}.icb.ph svg{color:var(--gold)}
+
+  /* mobile action bar */
+  .mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;display:none;gap:8px;background:rgba(14,14,19,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 6px;border-radius:12px;font-size:.8rem;font-weight:700;text-decoration:none}
+  .mbar svg{width:15px;height:15px}
+  .mbar .m-wa{background:#25D366;color:#fff}
+  .mbar .m-tg{background:#2AABEE;color:#fff}
+  .mbar .m-ph{background:var(--gold);color:#151004}
+  @media(max-width:640px){
+    .mbar.show{display:flex}
+    .fab{bottom:88px}
+    .chat{bottom:158px}
+    .teaser{bottom:160px}
+  }
+
+  /* chat teaser */
+  .teaser{position:fixed;right:20px;bottom:94px;z-index:85;background:var(--bg2);border:1px solid var(--line);border-radius:16px 16px 4px 16px;padding:12px 34px 12px 16px;max-width:250px;font-size:.84rem;box-shadow:0 18px 46px rgba(0,0,0,.55);display:none;animation:tin .45s ease;cursor:pointer}
+  .teaser.show{display:block}
+  .teaser b{color:var(--gold2)}
+  .teaser .tx{position:absolute;top:6px;right:10px;color:var(--muted);font-size:1rem}
+  @keyframes tin{from{opacity:0;transform:translateY(10px)}}
+  .tchips{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.85rem}
+  .tchips span{display:inline-flex;align-items:center;gap:7px}
+  .tchips svg{width:15px;height:15px;color:var(--gold)}
+
+  .pcard{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .pcard img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+  .pcap{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(12,12,16,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .pcap b{font-size:.95rem;display:block}
+  .pcap small{color:var(--muted);font-size:.75rem}
+  .pulse{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;color:#9be29b;white-space:nowrap}
+  .pulse::before{content:"";width:7px;height:7px;border-radius:50%;background:#6fdc6f;animation:pl 2s ease-in-out infinite}
+  @keyframes pl{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* sections */
+  section{padding:64px 0}
+  .eyebrow{color:var(--gold);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin-bottom:12px}
+  .h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:600;text-align:center;margin-bottom:14px}
+  .lead{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 42px}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cards3{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card .ic{width:44px;height:44px;border-radius:12px;background:rgba(211,176,108,.12);display:grid;place-items:center;margin-bottom:16px}
+  .card .ic svg{width:22px;height:22px;color:var(--gold)}
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card ul{list-style:none;margin:0 0 14px}
+  .card li{color:var(--muted);font-size:.9rem;padding:5px 0 5px 24px;position:relative}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:.85rem}
+  .price{color:var(--gold2);font-size:.85rem}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
+  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;counter-increment:st}
+  .step::before{content:counter(st,decimal-leading-zero);display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px}
+  .step b{display:block;margin-bottom:6px;font-size:.98rem}
+  .step p{color:var(--muted);font-size:.86rem}
+
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cases{grid-template-columns:1fr}}
+  .case{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px}
+  .case .num{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.7rem;margin-bottom:6px}
+  .case b{display:block;font-size:.95rem;margin-bottom:8px}
+  .case p{color:var(--muted);font-size:.86rem}
+
+  .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.revs{grid-template-columns:1fr}}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px;font-size:.9rem}
+  .rev p{color:var(--text);font-size:.9rem;margin-bottom:14px}
+  .rev .who{color:var(--muted);font-size:.8rem}
+
+  .final{background:linear-gradient(160deg,rgba(211,176,108,.10),rgba(70,60,120,.10));border:1px solid var(--line);border-radius:24px;padding:48px 30px;text-align:center}
+  .final h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:12px}
+  .final p{color:var(--muted);margin-bottom:26px}
+  .note{color:var(--muted);font-size:.75rem;margin-top:18px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.8rem;text-align:center}
+  footer b{color:var(--gold2)}
+
+  /* AI chat */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:90;width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--gold),#b8945a);cursor:pointer;box-shadow:0 12px 32px rgba(0,0,0,.45);display:grid;place-items:center;transition:.2s}
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:26px;height:26px;color:#151004}
+  .fab .dot{position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#6fdc6f;border:2px solid #0b0b0e}
+  .chat{position:fixed;right:20px;bottom:92px;z-index:95;width:min(370px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));background:var(--bg2);border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .chat.open{display:flex}
+  .chead{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,rgba(211,176,108,.16),rgba(211,176,108,.05));border-bottom:1px solid var(--line)}
+  .cava{width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#151004;font-weight:700;font-size:.8rem}
+  .chead b{font-size:.9rem;display:block}
+  .chead small{color:#9be29b;font-size:.72rem}
+  .cclose{margin-left:auto;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+  .cbody{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.86rem;white-space:pre-line}
+  .m-bot{background:var(--card2);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .m-user{background:var(--gold);color:#151004;border-bottom-right-radius:4px;align-self:flex-end}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
+  .quick button{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--gold2);font-size:.75rem;padding:7px 12px;border-radius:999px;cursor:pointer}
+  .quick button:hover{border-color:var(--gold)}
+  .cinput{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .cinput input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--text);font-size:.86rem;outline:none}
+  .cinput button{width:42px;height:42px;border-radius:50%;border:none;background:var(--gold);cursor:pointer;display:grid;place-items:center}
+  .cinput button svg{width:18px;height:18px;color:#151004}
+  .typing{display:inline-flex;gap:4px;padding:12px 14px}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:ty 1s infinite}
+  .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+  @keyframes ty{40%{transform:translateY(-4px)}}
+
+  /* objects catalog */
+  .objgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.objgrid{grid-template-columns:1fr}}
+  .obj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .obj:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .obj img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .obj .ob{padding:18px}
+  .obj b{display:block;font-size:1rem;margin-bottom:6px}
+  .obj .op{color:var(--gold2);font-weight:700;margin-bottom:4px}
+  .obj .om{color:var(--muted);font-size:.82rem;margin-bottom:12px}
+  .obj a{display:inline-flex;align-items:center;gap:6px;color:var(--gold2);font-size:.85rem;text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+  .obj a:hover{border-color:var(--gold)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Демонстрационный концепт · подготовлено SDT для Сергея Храменкова · тексты и цифры — примеры, заменим на ваши</div>
+
+<header>
+  <div class="wrap hrow">
+    <a class="logo" href="#">
+      <span class="mono">СХ</span>
+      <span><span class="lname">Сергей Храменков</span><br><span class="lsub">Маркетинг недвижимости · Сочи</span></span>
+    </a>
+    <nav>
+      <a href="#services">Задачи</a>
+      <a href="#objects">Услуги</a>
+      <a href="#how">Почему Сергей</a>
+      <a href="#cases">Результаты</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="hcta" href="#contact">Консультация</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hgrid">
+    <div>
+      <span class="badge">Маркетолог недвижимости · видеопродакшн · Сочи</span>
+      <h1>Клиенты для брокеров — <em>из рекламы, которая окупается</em></h1>
+      <p class="hsub">Рекламные кампании, YouTube-продакшн и аналитика для агентов и застройщиков Сочи. Делаю связку целиком: видео объекта → реклама → заявка в вашем мессенджере. Вы продаёте — трафик я беру на себя.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://wa.me/79996509849?text=Здравствуйте%2C%20Сергей!%20Хочу%20обсудить%20рекламу" target="_blank" rel="noopener">
+          <span class="icb wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg></span>
+          Написать в WhatsApp
+        </a>
+        <a class="btn btn-line" href="https://t.me/+79996509849" target="_blank" rel="noopener">
+          <span class="icb tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6ZM8.2 12.9l9.7-6.1c.2-.1.4.2.2.3l-8 7.4c-.3.3-.5.7-.6 1.1l-.3 2.2c0 .3-.5.3-.6 0l-1.1-3.7c-.1-.5.1-1 .7-1.2Z" transform="scale(.92) translate(1,1)"/></svg></span>
+          Telegram
+        </a>
+        <a class="btn btn-line" href="tel:+79996509849">
+          <span class="icb ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg></span>
+          Позвонить
+        </a>
+      </div>
+      <div class="tchips">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Яндекс.Директ и таргет под недвижимость</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Видеотуры и YouTube-канал под ключ</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Отчётность до заявки: Google Analytics и коллтрекинг</span>
+      </div>
+    </div>
+    <div class="pcard">
+      <img id="elenaPhoto" fetchpriority="high" decoding="async" src="portrait.webp" alt="Сергей Храменков — маркетолог недвижимости, Сочи">
+      <div class="pcap">
+        <span><b>Сергей Храменков</b><small>Маркетинг недвижимости · Сочи</small></span>
+        <span class="pulse">онлайн · отвечу сегодня</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Задачи</div>
+    <h2 class="h2">Какие проблемы решаю</h2>
+    <p class="lead">Брокеру не нужна «реклама вообще» — нужны показы и сделки. Каждая услуга собрана под этот результат.</p>
+    <div class="cards3">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+        <h3>Мало заявок и дорогой лид</h3>
+        <ul>
+          <li>Яндекс.Директ и таргет, настроенные под недвижимость</li>
+          <li>Посадочные страницы под каждый объект</li>
+          <li>Заявки сразу в WhatsApp/Telegram или CRM</li>
+          <li>Оптимизация по стоимости обращения, а не кликов</li>
+        </ul>
+        <div class="price">Реклама, за которую не стыдно перед бюджетом</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10 8 6 4-6 4V8Z"/><rect x="2" y="4" width="20" height="16" rx="3"/></svg></div>
+        <h3>Объект «не цепляет» в объявлениях</h3>
+        <ul>
+          <li>Кинематографичные видеотуры по объектам</li>
+          <li>Аэросъёмка виллы, ЖК и локации</li>
+          <li>YouTube-канал и Reels, которые продают экспертность</li>
+          <li>Съёмка и монтаж — своя команда, без подрядчиков</li>
+        </ul>
+        <div class="price">Видео, после которого звонят на показ</div>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20V10M12 20V4M18 20v-6"/></svg></div>
+        <h3>Непонятно, что работает</h3>
+        <ul>
+          <li>Google Analytics и коллтрекинг под ключ</li>
+          <li>Сквозная отчётность: от клика до сделки</li>
+          <li>Понятный отчёт раз в неделю, без «воды»</li>
+          <li>Решения на цифрах: что усилить, что отключить</li>
+        </ul>
+        <div class="price">Вы всегда знаете, откуда пришёл клиент</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="objects" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Услуги</div>
+    <h2 class="h2">Форматы работы</h2>
+    <p class="lead">Можно начать с одного видеотура — а можно отдать маркетинг целиком и получать заявки на автопилоте.</p>
+    <div class="objgrid">
+      <div class="obj"><img src="obj-1.webp" alt="Рекламная кампания под ключ — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>Рекламная кампания под ключ</b>
+          <div class="op">от 60 000 ₽/мес</div>
+          <div class="om">Яндекс.Директ + посадочная + заявки в CRM</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-2.webp" alt="YouTube-канал брокера — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>YouTube-канал брокера</b>
+          <div class="op">от 90 000 ₽/мес</div>
+          <div class="om">стратегия, съёмка, монтаж, продвижение</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-3.webp" alt="Видеотур по объекту — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>Видеотур по объекту</b>
+          <div class="op">от 25 000 ₽</div>
+          <div class="om">съёмка + монтаж · готов за 3 дня</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-4.webp" alt="Аэросъёмка объекта — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>Аэросъёмка объекта</b>
+          <div class="op">от 15 000 ₽</div>
+          <div class="om">дрон 4K · вилла, ЖК и локация с высоты</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-5.webp" alt="Сквозная аналитика — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>Сквозная аналитика</b>
+          <div class="op">от 40 000 ₽</div>
+          <div class="om">GA + коллтрекинг · отчёт от клика до сделки</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+      <div class="obj"><img src="obj-6.webp" alt="Упаковка личного бренда — Сергей Храменков" loading="lazy" decoding="async">
+        <div class="ob"><b>Упаковка личного бренда</b>
+          <div class="op">от 70 000 ₽</div>
+          <div class="om">позиционирование, съёмка, контент-план</div>
+          <a href="#" onclick="openChat();return false">Обсудить →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="how" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Почему Сергей</div>
+    <h2 class="h2">Маркетолог, который сам из недвижимости</h2>
+    <p class="lead">Не агентство с менеджерами, а один эксперт, который снимает, настраивает и отвечает за результат лично.</p>
+    <div class="steps">
+      <div class="step"><b>Знает рынок изнутри</b><p>Работал агентом по недвижимости в Сочи — говорит с брокерами на одном языке и знает, что цепляет покупателя.</p></div>
+      <div class="step"><b>Видео своими руками</b><p>Оператор и создатель YouTube-канала: съёмка, монтаж и упаковка — без сторонних подрядчиков и потери качества.</p></div>
+      <div class="step"><b>Трафик на цифрах</b><p>Яндекс.Директ, таргет и Google Analytics: бюджет распределяется по данным, а не по ощущениям.</p></div>
+      <div class="step"><b>Один ответственный</b><p>Видео, реклама и аналитика в одних руках — никто не переводит стрелки, результат спрашивать с одного человека.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Результаты</div>
+    <h2 class="h2">Цифры, к которым идём</h2>
+    <p class="lead">Цифры в примерах — иллюстрация формата. На живой витрине здесь будут ваши реальные кейсы.</p>
+    <div class="cases">
+      <div class="case"><div class="num">×3</div><b>Рост заявок брокеру</b><p>Связка «видеотур + Директ + посадочная» за два месяца утроила поток обращений по премиальным объектам.</p></div>
+      <div class="case"><div class="num">−42%</div><b>Стоимость обращения</b><p>Пересборка кампаний и отключение нерабочих площадок по данным аналитики — лид дешевле почти вдвое.</p></div>
+      <div class="case"><div class="num">250 000+</div><b>Просмотров видеотуров</b><p>Ролики объектов набирают органический охват и продолжают приводить клиентов после окончания рекламы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Отзывы</div>
+    <h2 class="h2">Что говорят клиенты</h2>
+    <p class="lead">Примеры отзывов — на живой витрине подключим ваши реальные, с именами и ссылками.</p>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><p>«До Сергея я три раза сливал бюджет в Директе. Он переделал кампании и посадочную — теперь заявки идут каждый день, и я знаю, сколько стоит каждая».</p><div class="who">Руслан · брокер, Сочи</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Видеотур виллы окупился одной сделкой: покупатель написал, что "влюбился в дом ещё до показа". Снято и смонтировано за три дня».</p><div class="who">Элина · премиальная недвижимость</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Вели канал сами и получали 200 просмотров. Сергей выстроил формат и съёмку — через полгода канал приводит клиентов стабильнее рекламы».</p><div class="who">Дмитрий · агентство недвижимости</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Наконец-то вижу всю цепочку: сколько кликов, сколько звонков, сколько показов. Отчёт раз в неделю на одну страницу — всё понятно без переводчика».</p><div class="who">Оксана · застройщик, отдел продаж</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Дрон-съёмка ЖК с моря — ролик, который мы поставили везде: сайт, реклама, презентации. Качество как у федеральных застройщиков».</p><div class="who">Тимур · девелопер</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Сергей упаковал мой личный бренд: позиционирование, съёмка, контент-план. Через месяц клиенты стали приходить со словами "видел ваши видео"».</p><div class="who">Жанна · риэлтор</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <h2 class="serif">Получите план продвижения под ваш объект — бесплатно</h2>
+      <p>Напишите в удобный мессенджер или задайте вопрос AI-помощнику — он на связи 24/7.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-gold" href="https://wa.me/79996509849?text=Здравствуйте%2C%20Сергей!%20Хочу%20обсудить%20рекламу" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn btn-line" href="https://t.me/+79996509849" target="_blank" rel="noopener">Написать в Telegram</a>
+        <button class="btn btn-line" onclick="openChat()">Спросить AI-помощника</button>
+      </div>
+      <div class="note">Это демонстрационная витрина: тексты и цифры — примеры, наполним вашими за один день.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Сергей Храменков · маркетинг недвижимости · Сочи<br><br>
+    <b>Демо-витрина создана SDT — Shirokov Deus Technology.</b> Такая же под ваш бренд — за 48 часов.
+  </div>
+</footer>
+
+<!-- mobile action bar -->
+<div class="mbar" id="mbar">
+  <a class="m-wa" href="https://wa.me/79996509849?text=Здравствуйте%2C%20Сергей!" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>WhatsApp</a>
+  <a class="m-tg" href="https://t.me/+79996509849" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6c.3-1.2-.9-2.2-2-1.7L2.7 9.6c-1.2.5-1.1 2.2.1 2.6l4.4 1.4 1.7 5.3c.4 1.1 1.8 1.4 2.6.5l2.4-2.5 4.5 3.3c1 .7 2.4.2 2.6-1l3-14.6Z"/></svg>Telegram</a>
+  <a class="m-ph" href="tel:+79996509849"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>Звонок</a>
+</div>
+
+<!-- chat teaser -->
+<div class="teaser" id="teaser" onclick="teaserOpen(event)">
+  <span class="tx" onclick="teaserClose(event)">×</span>
+  <b>Нужны заявки на объекты?</b><br>Я AI-помощник Сергея — отвечу за минуту, даже ночью 🌙
+</div>
+
+<!-- AI assistant -->
+<button class="fab" onclick="toggleChat()" aria-label="AI-помощник">
+  <span class="dot"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
+</button>
+
+<div class="chat" id="chat">
+  <div class="chead">
+    <img class="cava" src="portrait.webp" alt="Сергей Храменков" style="object-fit:cover;object-position:top">
+    <div><b>AI-помощник Сергею</b><small>онлайн · отвечает мгновенно</small></div>
+    <button class="cclose" onclick="toggleChat()">×</button>
+  </div>
+  <div class="cbody" id="cbody"></div>
+  <div class="quick" id="quick"></div>
+  <div class="cinput">
+    <input id="cinp" type="text" placeholder="Ваш вопрос про рекламу…" onkeydown="if(event.key==='Enter')send()">
+    <button onclick="send()" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/></svg></button>
+  </div>
+</div>
+
+<script>
+const QA = [
+  {q:"Сколько стоит реклама для брокера?", k:["сколько стоит реклам","бюджет","цен","стоимост"], a:"Кампания под ключ — от 60 000 ₽/мес (настройка, посадочная, ведение), плюс рекламный бюджет — обычно от 50 000 ₽/мес на Яндекс.Директ по Сочи.\n\nНапишите Сергею: посчитает связку под ваш объект и цели бесплатно."},
+  {q:"Настроите Яндекс.Директ?", k:["директ","яндекс","контекст","поисков"], a:"Да, это основной инструмент: поисковые кампании по горячим запросам («купить квартиру в Сочи», «виллы Красная Поляна»), РСЯ и ретаргетинг.\n\nПод каждый объект — своя посадочная и свои объявления. Оптимизация по стоимости заявки, а не кликов."},
+  {q:"Снимете и смонтируете видео объекта?", k:["монтаж","монтир","съёмк","съемк","видеотур","ролик","видео объект"], a:"Да, полный цикл своими руками: сценарий, съёмка (камера + стабилизатор), аэросъёмка дроном, монтаж, цветокоррекция, титры и версии под все форматы — YouTube, Reels, объявления.\n\nВидеотур объекта готов за 3 дня, от 25 000 ₽."},
+  {q:"YouTube-канал с нуля — реально?", k:["youtube","ютуб","канал"], a:"Да. Сергей сам создатель YouTube-канала: стратегия, рубрики, съёмка, монтаж, обложки, SEO-описания и продвижение.\n\nФормат под вас: видеотуры, разборы районов и ЖК, ответы на вопросы покупателей. Канал приводит клиентов и после окончания рекламы — это актив, а не расход."},
+  {q:"А Reels и короткие ролики?", k:["reels","рилс","шортс","shorts","коротк"], a:"Из каждой съёмки Сергей собирает пакет коротких вертикальных роликов под Reels/Shorts — они дают охваты без бюджета и ведут людей на витрину или канал.\n\nМожно заказать и отдельно: пакет из 10 роликов из ваших материалов."},
+  {q:"Как быстро появятся заявки?", k:["как быстро","срок","когда результат","заявк"], a:"Первые заявки — обычно в первую-вторую неделю после запуска. На стабильную стоимость обращения кампания выходит за 3–4 недели оптимизации.\n\nВидео работает сразу: ролик объекта можно ставить в объявления в день монтажа."},
+  {q:"Как пойму, что реклама работает?", k:["аналитик","отчет","отчёт","работает","коллтрек","google","метрик"], a:"Каждая кампания подключается к Google Analytics, Яндекс.Метрике и коллтрекингу: виден путь от клика до звонка и показа.\n\nРаз в неделю — отчёт на одну страницу: заявки, стоимость, что меняем. Только цифры, без «воды»."},
+  {q:"Что нужно от меня?", k:["что нужно","от меня","с чего нач"], a:"Минимум: доступ к объекту для съёмки и 30 минут на бриф. Остальное — съёмка, монтаж, посадочная, настройка и отчёты — Сергей делает сам.\n\nЗаявки приходят сразу в ваш WhatsApp/Telegram или CRM."},
+  {k:["упаковк","личн","бренд","позиционир"], a:"Упаковка личного бренда — от 70 000 ₽: позиционирование, съёмка, оформление соцсетей и контент-план на месяц. После неё клиенты приходят со словами «видел ваши видео»."},
+  {k:["договор","оплат","юрид"], a:"Работа по договору, оплата этапами. Условия и объём фиксируются до старта — без скрытых платежей."},
+  {k:["дрон","аэро","коптер","с высоты"], a:"Аэросъёмка — от 15 000 ₽: дрон 4K, вилла или ЖК с моря и с высоты, погодное окно подбирается заранее. Такие кадры продают локацию лучше любого текста."},
+  {k:["привет","здравств","добрый"], a:"Здравствуйте! Я AI-помощник Сергея Храменкова. Отвечу на вопросы о рекламе для брокеров, видеотурах, монтаже, YouTube и аналитике. Что вас интересует?"}
+];
+const FALLBACK = "Хороший вопрос! Точнее всего ответит сам Сергей — напишите ему в WhatsApp или Telegram (кнопки выше), обычно отвечает в течение часа.\n\nА я могу подсказать по ценам, срокам, видео и аналитике.";
+const cbody = document.getElementById('cbody');
+const quick = document.getElementById('quick');
+let opened = false;
+
+let phoneMode = false;
+function toggleChat(){
+  const c = document.getElementById('chat');
+  c.classList.toggle('open');
+  document.getElementById('teaser').classList.remove('show');
+  if(c.classList.contains('open') && !opened){opened = true; botSay("Здравствуйте! 👋 Я AI-помощник Сергея.\nПодскажу по рекламе, видеотурам и YouTube — или сразу соединю с Сергеем.\n\nВыберите вопрос или напишите свой:"); renderQuick();}
+}
+function teaserOpen(e){ if(e.target.classList.contains('tx')) return; toggleChat(); }
+function teaserClose(e){ e.stopPropagation(); document.getElementById('teaser').classList.remove('show'); }
+setTimeout(()=>{ if(!opened) document.getElementById('teaser').classList.add('show'); }, 2600);
+window.addEventListener('scroll',()=>{
+  const b=document.getElementById('mbar');
+  if(window.scrollY>560) b.classList.add('show'); else b.classList.remove('show');
+},{passive:true});
+function askPhone(){
+  phoneMode = true;
+  botSay("Оставьте номер телефона — Сергей перезвонит в удобное для вас время 📞");
+}
+function openChat(){const c=document.getElementById('chat'); if(!c.classList.contains('open')) toggleChat(); c.scrollIntoView({block:'end'});}
+function renderQuick(){
+  quick.innerHTML='';
+  QA.filter(x=>x.q).forEach(x=>{const b=document.createElement('button');b.textContent=x.q;b.onclick=()=>{userSay(x.q);answer(x.q)};quick.appendChild(b)});
+  const p=document.createElement('button');p.textContent='📞 Оставить номер';p.style.borderColor='var(--gold)';p.onclick=()=>{userSay('Хочу, чтобы мне перезвонили');askPhone()};quick.appendChild(p);
+}
+function el(cls,txt){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function botSay(t){el('m-bot',t)}
+function userSay(t){el('m-user',t)}
+function typing(){const d=document.createElement('div');d.className='typing';d.innerHTML='<i></i><i></i><i></i>';cbody.appendChild(d);cbody.scrollTop=cbody.scrollHeight;return d}
+function answer(text){
+  const t=typing();
+  setTimeout(()=>{
+    t.remove();
+    const low=text.toLowerCase();
+    const hit=QA.find(x=>x.k.some(k=>low.includes(k)));
+    botSay(hit?hit.a:FALLBACK);
+  }, 700+Math.random()*600);
+}
+function send(){
+  const inp=document.getElementById('cinp');
+  const v=inp.value.trim();
+  if(!v) return;
+  inp.value='';
+  userSay(v);
+  if(phoneMode){
+    phoneMode=false;
+    const digits=v.replace(/\D/g,'');
+    const t=typing();
+    setTimeout(()=>{
+      t.remove();
+      if(digits.length>=10){
+        botSay("Спасибо, номер записала! ✅ Сергей свяжется с вами в ближайшее рабочее время.\n\n(Это демо-витрина: заявка никуда не отправлена. На живой версии она мгновенно придёт Сергею в Telegram.)");
+      } else {
+        botSay("Кажется, в номере не хватает цифр 🙂 Напишите его в формате +7 900 000-00-00 — или просто нажмите кнопку WhatsApp выше.");
+        phoneMode=true;
+      }
+    },800);
+    return;
+  }
+  answer(v);
+}
+</script>
+</body>
+</html>
