@@ -20,7 +20,9 @@
 
   /* header */
   header{position:sticky;transform:translateZ(0);top:0;z-index:50;background:rgba(11,11,14,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .hrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .hrow{display:flex;align-items:center;justify-content:space-between;height:92px}
+  .hlogo{width:74px;height:74px}
+  @media(max-width:640px){.hrow{height:74px}.hlogo{width:56px;height:56px}}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
   .mono{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600;font-size:.9rem;letter-spacing:.05em}
   .lname{font-weight:600;font-size:.95rem;letter-spacing:.02em}
@@ -191,7 +193,7 @@
 <header>
   <div class="wrap hrow">
     <a class="logo" href="#">
-      <img src="logo.webp" alt="Новостройки Групп" style="width:54px;height:54px;object-fit:cover;border-radius:12px;flex:none;transform:translateZ(0)" width="54" height="54" decoding="async">
+      <img src="logo.webp" alt="Новостройки Групп" class="hlogo" style="object-fit:cover;border-radius:16px;flex:none;transform:translateZ(0)" width="74" height="74" decoding="async">
       <span><span class="lname">Галина Перейма</span><br><span class="lsub">Новостройки Групп</span></span>
     </a>
     <nav>
