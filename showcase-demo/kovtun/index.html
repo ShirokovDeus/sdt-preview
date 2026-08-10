@@ -46,7 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,12,10,.85)
 /* portrait */
 .portrait{position:relative;max-width:440px;margin-left:auto}
 .portrait::before{content:'';position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--line);border-radius:2px}
-.portrait img{position:relative;width:100%;display:block;border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.portrait img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,.6);background:#171512}
 .portrait .cap{position:absolute;left:22px;bottom:-1px;right:-22px;background:linear-gradient(0deg,rgba(13,12,10,.92),transparent);padding:70px 24px 18px;font-size:13px;color:#d8cfbc}
 .portrait .cap b{display:block;font-family:'Playfair Display';font-size:17px;color:var(--iv)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait{margin:10px auto 0}}
