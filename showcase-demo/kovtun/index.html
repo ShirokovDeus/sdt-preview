@@ -53,8 +53,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,12,10,.85)
 /* STATS */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
 .stats-in{max-width:1120px;margin:0 auto;padding:40px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-.num{font-family:'Playfair Display';font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--gold2)}
-.stats span{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+.num{font-family:'Playfair Display';font-size:clamp(30px,4.4vw,48px);font-weight:700;color:var(--gold2);white-space:nowrap}
+.stats .lbl{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+.num .cnt{display:inline;font:inherit;color:inherit;margin:0}
 @media(max-width:720px){.stats-in{grid-template-columns:repeat(2,1fr)}}
 /* SECTIONS */
 section{padding:96px 0}
@@ -190,10 +191,10 @@ footer a{color:var(--gold);text-decoration:none}
 
 <div class="stats">
   <div class="stats-in">
-    <div><div class="num"><span class="cnt" data-to="5000">0</span>+</div><span>человек обучено</span></div>
-    <div><div class="num"><span class="cnt" data-to="8">0</span> из 10</div><span>клиентов возвращаются</span></div>
-    <div><div class="num">≈<span class="cnt" data-to="27">0</span>%</div><span>средний рост KPI</span></div>
-    <div><div class="num"><span class="cnt" data-to="8">0</span>+ лет</div><span>в обучении и продажах</span></div>
+    <div><div class="num"><span class="cnt" data-to="5000">0</span>+</div><span class="lbl">человек обучено</span></div>
+    <div><div class="num"><span class="cnt" data-to="8">0</span> из 10</div><span class="lbl">клиентов возвращаются</span></div>
+    <div><div class="num">≈<span class="cnt" data-to="27">0</span>%</div><span class="lbl">средний рост KPI</span></div>
+    <div><div class="num"><span class="cnt" data-to="8">0</span>+ лет</div><span class="lbl">в обучении и продажах</span></div>
   </div>
 </div>
 
