@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Артём Ковтун — спикер премиальных бизнес-событий</title>
+<meta name="description" content="Пригласить Артёма Ковтуна спикером: форумы, корпоративные события, мастер-классы. 5000+ обучено, кейсы с цифрами.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0c0a;--bg2:#121110;--card:#171512;--gold:#c8a35c;--gold2:#e6c98a;--line:rgba(200,163,92,.22);--iv:#f3ede1;--mut:#9a917f}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--iv);font-family:'Manrope',sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.gold{color:var(--gold)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,12,10,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1120px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:'Playfair Display';font-weight:700;font-size:17px;letter-spacing:.04em}
+.logo small{display:block;font-family:'Manrope';font-weight:600;font-size:10px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase}
+.nav-cta{border:1px solid var(--gold);color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.06em;padding:11px 22px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:.25s}
+.nav-cta:hover{background:var(--gold);color:#171204}
+/* HERO */
+.hero{position:relative;padding:150px 0 90px;background:radial-gradient(900px 500px at 78% 30%,rgba(200,163,92,.09),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold);font-size:11.5px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;margin-bottom:26px}
+.rule::before{content:'';width:56px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.14}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero .lead{margin-top:22px;max-width:520px;color:#cfc6b4;font-size:clamp(15px,1.8vw,17.5px)}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 32px;border-radius:2px;font-weight:800;font-size:14.5px;letter-spacing:.04em;text-decoration:none;transition:.25s}
+.btn-p{background:linear-gradient(135deg,var(--gold),#a9843f);color:#171204;box-shadow:0 12px 34px rgba(200,163,92,.28)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(200,163,92,.4)}
+.btn-o{border:1px solid rgba(243,237,225,.3);color:var(--iv)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold2)}
+.hero .tel{display:inline-block;margin-top:22px;color:var(--mut);font-size:14px;text-decoration:none}
+.hero .tel b{color:var(--iv);font-weight:700;letter-spacing:.04em}
+/* portrait */
+.portrait{position:relative;max-width:440px;margin-left:auto}
+.portrait::before{content:'';position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--line);border-radius:2px}
+.portrait img{position:relative;width:100%;display:block;border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.portrait .cap{position:absolute;left:22px;bottom:-1px;right:-22px;background:linear-gradient(0deg,rgba(13,12,10,.92),transparent);padding:70px 24px 18px;font-size:13px;color:#d8cfbc}
+.portrait .cap b{display:block;font-family:'Playfair Display';font-size:17px;color:var(--iv)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait{margin:10px auto 0}}
+/* STATS */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.stats-in{max-width:1120px;margin:0 auto;padding:40px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.num{font-family:'Playfair Display';font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--gold2)}
+.stats span{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+@media(max-width:720px){.stats-in{grid-template-columns:repeat(2,1fr)}}
+/* SECTIONS */
+section{padding:96px 0}
+h2{font-size:clamp(26px,4.2vw,42px);line-height:1.16;margin-bottom:16px}
+.sub{color:var(--mut);max-width:640px;margin-bottom:52px;font-size:15.5px}
+/* TOPICS editorial rows */
+.trow{display:grid;grid-template-columns:90px 1fr auto;gap:26px;align-items:baseline;padding:30px 0;border-top:1px solid var(--line);transition:.25s}
+.trow:last-child{border-bottom:1px solid var(--line)}
+.trow:hover{background:rgba(200,163,92,.04)}
+.trow .no{font-family:'Playfair Display';font-size:26px;color:var(--gold);font-style:italic}
+.trow h3{font-size:clamp(19px,2.6vw,26px);margin-bottom:8px}
+.trow p{color:var(--mut);font-size:14.5px;max-width:560px}
+.trow .fmt-tag{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:720px){.trow{grid-template-columns:48px 1fr}.trow .fmt-tag{grid-column:2}}
+/* CASES */
+.cases{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:32px 28px}
+.case .co{font-family:'Playfair Display';font-weight:700;font-size:20px}
+.case .sphere{color:var(--mut);font-size:12.5px;letter-spacing:.06em;margin-bottom:20px}
+.case ul{list-style:none}
+.case li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(200,163,92,.12);font-size:13.5px;color:#cfc6b4}
+.case li b{color:var(--gold2);font-weight:800;white-space:nowrap}
+@media(max-width:840px){.case-grid{grid-template-columns:1fr}}
+/* WRITE STRIP */
+.strip{padding:0}
+.strip-in{max-width:1120px;margin:0 auto;padding:46px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.strip-in .t{font-family:'Playfair Display';font-size:clamp(19px,2.6vw,26px)}
+/* PHOTOS */
+.ph-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}
+.ph{border-radius:2px;overflow:hidden;border:1px solid var(--line);min-height:300px;position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:720px){.ph-grid{grid-template-columns:1fr}}
+/* VENUES */
+.venues{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.venue{border:1px solid var(--line);border-radius:2px;padding:30px;background:var(--card)}
+.venue .city{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
+.venue h3{font-size:20px;margin:12px 0 8px}
+.venue p{color:var(--mut);font-size:13.5px}
+.clients{margin-top:40px;color:var(--mut);font-size:14.5px;text-align:center}
+.clients b{color:var(--iv)}
+@media(max-width:840px){.venues{grid-template-columns:1fr}}
+/* FORMATS */
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fmt{border:1px solid var(--line);border-radius:2px;padding:32px;background:linear-gradient(165deg,var(--card),#100e0b)}
+.fmt h3{font-size:21px;color:var(--gold2);margin-bottom:6px}
+.fmt .t{font-size:12.5px;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.fmt p{font-size:14px;color:#cfc6b4}
+@media(max-width:840px){.formats{grid-template-columns:1fr}}
+/* CTA */
+.cta{position:relative;text-align:center;padding:110px 0;overflow:hidden;background:var(--bg2);border-top:1px solid var(--line)}
+.cta::before{content:'';position:absolute;left:50%;top:50%;width:760px;height:760px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(200,163,92,.12),transparent 62%)}
+.cta-in{position:relative;z-index:2}
+.cta h2{max-width:720px;margin:0 auto 16px}
+.cta p{color:var(--mut);margin-bottom:36px}
+.cta .tel{display:block;margin-top:26px;color:var(--mut);font-size:14px}
+.cta .tel a{color:var(--gold2);text-decoration:none;font-weight:700}
+footer{padding:34px 0;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+footer a{color:var(--gold);text-decoration:none}
+/* FABS */
+.fabs{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.fab.tg{background:linear-gradient(135deg,var(--gold),#a9843f)}
+.fab.wa{background:#1d2a22;border:1px solid var(--line)}
+.fab svg{width:27px;height:27px}
+.fab.tg svg{fill:#171204}
+.fab.wa svg{fill:var(--gold2)}
+.reveal{opacity:0;transform:translateY(26px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">Артём Ковтун<small>Спикер · Бизнес-тренер</small></div>
+    <a class="nav-cta" href="https://t.me/Kovtun_Industries" target="_blank">Написать</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="rule">Форумы · Корпоративные события · Мастер-классы</div>
+      <h1>Спикер, после которого зал <em>не расходится</em></h1>
+      <p class="lead">Артём Ковтун — бизнес-тренер, оратор-харизматик, предприниматель. Выступления об энергии продаж, харизме и AI-трансформации: не «мотивация на день», а инструменты на годы.</p>
+      <div class="btns">
+        <a class="btn btn-p" href="https://t.me/Kovtun_Industries" target="_blank">Написать в Telegram</a>
+        <a class="btn btn-o" href="https://wa.me/79003905905" target="_blank">Написать в WhatsApp</a>
+      </div>
+      <a class="tel" href="tel:+79003905905">Или по телефону — <b>+7 900 390 5905</b></a>
+    </div>
+    <div class="portrait reveal on">
+      <img src="portrait.webp?v=1" alt="Артём Ковтун на сцене" fetchpriority="high">
+      <div class="cap"><b>Артём Ковтун</b>бизнес-тренер · оратор · предприниматель</div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-in">
+    <div><div class="num">5000+</div><span>человек обучено</span></div>
+    <div><div class="num">8 из 10</div><span>клиентов возвращаются</span></div>
+    <div><div class="num">≈27%</div><span>средний рост KPI</span></div>
+    <div><div class="num">8+ лет</div><span>в обучении и продажах</span></div>
+  </div>
+</div>
+
+<section id="topics">
+  <div class="wrap">
+    <div class="rule reveal">Темы выступлений</div>
+    <h2 class="reveal">Четыре темы, которые <em class="gold" style="font-style:italic">держат зал</em></h2>
+    <p class="sub reveal">Каждая адаптируется под аудиторию: собственники, топ-менеджеры, отделы продаж, HR.</p>
+    <div>
+      <div class="trow reveal"><span class="no">I</span><div><h3>Энергия как валюта продаж</h3><p>Почему сделки закрывает не скрипт, а состояние. Как управлять своей энергией и энергией клиента.</p></div><span class="fmt-tag">Кейноут · 60 мин</span></div>
+      <div class="trow reveal"><span class="no">II</span><div><h3>Эффектная и эффективная самопрезентация</h3><p>Формула выступления, язык тела и голоса, сторителлинг. Мастер-класс, обкатанный на форуме «HR-Развитие».</p></div><span class="fmt-tag">Мастер-класс · 2–3 ч</span></div>
+      <div class="trow reveal"><span class="no">III</span><div><h3>AI-трансформация без магии</h3><p>Что реально работает из ИИ в продажах и сервисе: ассистенты, промптинг, внедрение без хаоса.</p></div><span class="fmt-tag">Кейноут · 60–90 мин</span></div>
+      <div class="trow reveal"><span class="no">IV</span><div><h3>Сервис, который продаёт без продаж</h3><p>Как превосходящий сервис поднимает чек и возвращает клиентов. На кейсах ресторанов, отелей и ритейла.</p></div><span class="fmt-tag">Панель · Кейноут</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="wrap">
+    <div class="rule reveal">Не обещания — цифры</div>
+    <h2 class="reveal">Что происходит с бизнесом после Артёма</h2>
+    <p class="sub reveal">Три корпоративных кейса из разных отраслей.</p>
+    <div class="case-grid">
+      <div class="case reveal"><div class="co">Babor</div><div class="sphere">институт красоты</div><ul>
+        <li>Выручка<b>+68%</b></li><li>Конверсия в косметику<b>15% → 42%</b></li><li>Средний чек<b>6 000 → 9 300 ₽</b></li><li>Текучка персонала<b>−30%</b></li></ul></div>
+      <div class="case reveal"><div class="co">Этажи</div><div class="sphere">агентство недвижимости</div><ul>
+        <li>Конверсия заявка → показ<b>28% → 51%</b></li><li>Скорость ответа клиенту<b>12 ч → 3 ч</b></li><li>Отказы<b>−40%</b></li><li>Сделок на агента<b>1–2 → 3/мес</b></li></ul></div>
+      <div class="case reveal"><div class="co">Madyar Collection</div><div class="sphere">сеть ресторанов</div><ul>
+        <li>Средний чек<b>2 500 → 3 175 ₽</b></li><li>Десерты и напитки<b>+65%</b></li><li>Оценки гостей<b>4.2 → 4.7</b></li><li>Команда осталась<b>85%</b></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <div class="t">Хотите такие же цифры после вашего события?</div>
+    <div class="btns" style="margin:0">
+      <a class="btn btn-p" href="https://t.me/Kovtun_Industries" target="_blank">Написать Артёму</a>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="rule reveal">Атмосфера</div>
+    <h2 class="reveal">Сцена и работа с командами</h2>
+    <div class="ph-grid" style="margin-top:44px">
+      <div class="ph reveal"><img src="obj-1.webp?v=1" alt="Зал делового события" loading="lazy"></div>
+      <div class="ph reveal"><img src="obj-2.webp?v=1" alt="Мастер-класс для руководителей" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="venues">
+  <div class="wrap">
+    <div class="rule reveal">Где выступал</div>
+    <h2 class="reveal">Площадки и форумы</h2>
+    <div class="venues" style="margin-top:44px">
+      <div class="venue reveal"><div class="city">Краснодар</div><h3>Торус Финанс Групп</h3><p>Панельное выступление «Предприниматели нового времени»</p></div>
+      <div class="venue reveal"><div class="city">Москва</div><h3>Форум «HR-Развитие»</h3><p>Мастер-класс «Эффектная и эффективная самопрезентация»</p></div>
+      <div class="venue reveal"><div class="city">Ялта</div><h3>Mriya Resort &amp; SPA</h3><p>Панельная дискуссия «Продающий Сервис»</p></div>
+    </div>
+    <p class="clients reveal">Среди клиентов и партнёров — <b>Сбербанк, МТС, Babor, Этажи, Madyar Collection</b> и десятки компаний по всей России.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rule reveal">Форматы</div>
+    <h2 class="reveal">Организатору — просто</h2>
+    <div class="formats" style="margin-top:44px">
+      <div class="fmt reveal"><h3>Кейноут</h3><div class="t">45–90 минут</div><p>Заряжающее выступление под тему события. Слайды и тайминг согласуются за неделю. Онлайн или офлайн.</p></div>
+      <div class="fmt reveal"><h3>Мастер-класс</h3><div class="t">2–4 часа</div><p>Практика в зале: упражнения, разборы, работа с участниками. До 100 человек, нужен только экран и микрофон.</p></div>
+      <div class="fmt reveal"><h3>Модерация · Панель</h3><div class="t">По формату события</div><p>Участие в дискуссиях и модерация секций. Опыт панелей на площадках от Краснодара до Ялты.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-in">
+    <div class="rule" style="justify-content:center">Даты разбирают за 3–4 недели</div>
+    <h2>Забронируйте Артёма <em class="gold" style="font-style:italic">на ваше событие</em></h2>
+    <p>Напишите — ответ в течение дня. Пришлём темы, райдер и свободные даты.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-p" href="https://t.me/Kovtun_Industries" target="_blank">Написать в Telegram</a>
+      <a class="btn btn-o" href="https://wa.me/79003905905" target="_blank">Написать в WhatsApp</a>
+    </div>
+    <div class="tel">Телефон: <a href="tel:+79003905905">+7 900 390 5905</a></div>
+  </div>
+</section>
+
+<footer>
+  Артём Ковтун · Бизнес-тренер, спикер · <a href="https://artem-kovtun.ru" target="_blank">artem-kovtun.ru</a> · <a href="https://t.me/kovtun_life" target="_blank">t.me/kovtun_life</a><br>
+  Превью-концепт спикер-страницы · Shirokov Deus Technology
+</footer>
+
+<div class="fabs">
+  <a class="fab wa" href="https://wa.me/79003905905" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.1c-.24.68-1.4 1.3-1.93 1.35-.52.05-1.01.24-3.4-.71-2.87-1.13-4.7-4.06-4.84-4.25-.14-.19-1.16-1.55-1.16-2.95s.73-2.09 1-2.38c.26-.29.57-.36.76-.36l.55.01c.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48l-.43.5c-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.62.76 1.9.9.28.14.46.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+  </a>
+  <a class="fab tg" href="https://t.me/Kovtun_Industries" target="_blank" aria-label="Telegram">
+    <svg viewBox="0 0 24 24"><path d="M9.04 15.51 8.9 19.1c.37 0 .53-.16.72-.35l1.73-1.66 3.59 2.63c.66.36 1.13.17 1.3-.61l2.36-11.1c.21-.98-.35-1.36-1-1.12L4.1 12.1c-.95.37-.94.9-.16 1.14l3.55 1.1 8.24-5.2c.39-.24.74-.11.45.15l-7.14 6.22Z"/></svg>
+  </a>
+</div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
