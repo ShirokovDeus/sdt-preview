@@ -115,14 +115,40 @@ h2{font-size:clamp(26px,4.2vw,42px);line-height:1.16;margin-bottom:16px}
 .cta .tel a{color:var(--gold2);text-decoration:none;font-weight:700}
 footer{padding:34px 0;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
 footer a{color:var(--gold);text-decoration:none}
-/* FABS */
-.fabs{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
-.fab{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.fab.tg{background:linear-gradient(135deg,var(--gold),#a9843f)}
-.fab.wa{background:#1d2a22;border:1px solid var(--line)}
-.fab svg{width:27px;height:27px}
-.fab.tg svg{fill:#171204}
-.fab.wa svg{fill:var(--gold2)}
+/* ASSISTANT */
+.as-fab{position:fixed;right:22px;bottom:22px;z-index:70;display:flex;align-items:center;gap:12px;cursor:pointer;background:#14110d;border:1px solid var(--gold);border-radius:99px;padding:8px 20px 8px 8px;box-shadow:0 14px 40px rgba(0,0,0,.6),0 0 24px rgba(200,163,92,.25);transition:.25s}
+.as-fab:hover{transform:translateY(-2px)}
+.as-fab img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--gold)}
+.as-fab .txt{line-height:1.25}
+.as-fab .txt b{display:block;font-size:13.5px;color:var(--gold2)}
+.as-fab .txt span{font-size:11px;color:var(--mut)}
+.as-dot{position:absolute;top:8px;left:46px;width:11px;height:11px;border-radius:50%;background:#4ade80;border:2px solid #14110d;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.4}}
+.as-panel{position:fixed;right:22px;bottom:96px;z-index:71;width:min(390px,calc(100vw - 32px));max-height:min(600px,calc(100dvh - 130px));background:#12100c;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.7);display:none;flex-direction:column;overflow:hidden}
+.as-panel.open{display:flex}
+.as-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#1a160f,#12100c);border-bottom:1px solid var(--line)}
+.as-head img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--gold)}
+.as-head b{display:block;font-size:14px}
+.as-head small{color:#4ade80;font-size:11px}
+.as-head .cta-ic{margin-left:auto;display:flex;gap:8px}
+.as-head .cta-ic a{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.as-head .cta-ic svg{width:17px;height:17px;fill:var(--gold2)}
+.as-close{background:none;border:none;color:var(--mut);font-size:20px;cursor:pointer;padding:4px 6px}
+.as-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin}
+.msg{max-width:85%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.5}
+.msg.bot{background:#1c1812;border:1px solid rgba(200,163,92,.16);border-bottom-left-radius:4px;align-self:flex-start;color:#e9e2d2}
+.msg.user{background:linear-gradient(135deg,var(--gold),#a9843f);color:#171204;font-weight:600;border-bottom-right-radius:4px;align-self:flex-end}
+.msg.typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin:0 2px;animation:tp 1s infinite}
+.msg.typing span:nth-child(2){animation-delay:.15s}.msg.typing span:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+.as-qs{border-top:1px solid var(--line);background:#0f0d0a;max-height:172px;overflow-y:auto;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;scrollbar-width:thin}
+.as-q{border:1px solid rgba(200,163,92,.35);background:#161310;color:var(--gold2);font-size:12px;font-weight:600;padding:8px 12px;border-radius:99px;cursor:pointer;transition:.2s;font-family:'Manrope'}
+.as-q:hover{background:var(--gold);color:#171204}
+.as-q.used{opacity:.35}
+.as-foot{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:#0f0d0a}
+.as-foot a{flex:1;text-align:center;padding:11px;border-radius:10px;font-size:12.5px;font-weight:800;text-decoration:none}
+.as-foot .tg{background:linear-gradient(135deg,var(--gold),#a9843f);color:#171204}
+.as-foot .wa{border:1px solid var(--line);color:var(--gold2)}
 .reveal{opacity:0;transform:translateY(26px);transition:.8s cubic-bezier(.2,.7,.3,1)}
 .reveal.on{opacity:1;transform:none}
 /* TICKER */
@@ -291,13 +317,28 @@ footer a{color:var(--gold);text-decoration:none}
   Превью-концепт спикер-страницы · Shirokov Deus Technology
 </footer>
 
-<div class="fabs">
-  <a class="fab wa" href="https://wa.me/79003905905" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.1c-.24.68-1.4 1.3-1.93 1.35-.52.05-1.01.24-3.4-.71-2.87-1.13-4.7-4.06-4.84-4.25-.14-.19-1.16-1.55-1.16-2.95s.73-2.09 1-2.38c.26-.29.57-.36.76-.36l.55.01c.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48l-.43.5c-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.62.76 1.9.9.28.14.46.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
-  </a>
-  <a class="fab tg" href="https://t.me/Kovtun_Industries" target="_blank" aria-label="Telegram">
-    <svg viewBox="0 0 24 24"><path d="M9.04 15.51 8.9 19.1c.37 0 .53-.16.72-.35l1.73-1.66 3.59 2.63c.66.36 1.13.17 1.3-.61l2.36-11.1c.21-.98-.35-1.36-1-1.12L4.1 12.1c-.95.37-.94.9-.16 1.14l3.55 1.1 8.24-5.2c.39-.24.74-.11.45.15l-7.14 6.22Z"/></svg>
-  </a>
+<div class="as-fab" id="asFab">
+  <img src="portrait.webp?v=1" alt="Ассистент Артёма">
+  <span class="as-dot"></span>
+  <span class="txt"><b>Ассистент Артёма</b><span>онлайн · отвечу сразу</span></span>
+</div>
+
+<div class="as-panel" id="asPanel">
+  <div class="as-head">
+    <img src="portrait.webp?v=1" alt="">
+    <div><b>Личный ассистент Артёма</b><small>● онлайн</small></div>
+    <div class="cta-ic">
+      <a href="https://wa.me/79003905905" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.1c-.24.68-1.4 1.3-1.93 1.35-.52.05-1.01.24-3.4-.71-2.87-1.13-4.7-4.06-4.84-4.25-.14-.19-1.16-1.55-1.16-2.95s.73-2.09 1-2.38c.26-.29.57-.36.76-.36l.55.01c.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48l-.43.5c-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.62.76 1.9.9.28.14.46.21.53.33.07.12.07.68-.17 1.36Z"/></svg></a>
+      <a href="https://t.me/Kovtun_Industries" target="_blank" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.04 15.51 8.9 19.1c.37 0 .53-.16.72-.35l1.73-1.66 3.59 2.63c.66.36 1.13.17 1.3-.61l2.36-11.1c.21-.98-.35-1.36-1-1.12L4.1 12.1c-.95.37-.94.9-.16 1.14l3.55 1.1 8.24-5.2c.39-.24.74-.11.45.15l-7.14 6.22Z"/></svg></a>
+    </div>
+    <button class="as-close" id="asClose" aria-label="Закрыть">✕</button>
+  </div>
+  <div class="as-body" id="asBody"></div>
+  <div class="as-qs" id="asQs"></div>
+  <div class="as-foot">
+    <a class="tg" href="https://t.me/Kovtun_Industries" target="_blank">Написать в Telegram</a>
+    <a class="wa" href="https://wa.me/79003905905" target="_blank">WhatsApp</a>
+  </div>
 </div>
 
 <script>
@@ -314,6 +355,38 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{
   requestAnimationFrame(step);
 }),{threshold:.5});
 document.querySelectorAll('.cnt').forEach(el=>cio.observe(el));
+// ===== Личный ассистент Артёма =====
+const QA=[
+["Сколько стоит выступление?","Стоимость зависит от формата, города и даты. Индивидуальные программы — от 7 000 ₽/час, корпоративное сопровождение отдела продаж — от 80 000 ₽/мес. По кейноутам и форумам напишите в Telegram — пришлём точное предложение в течение дня."],
+["Какие темы выступлений?","Четыре флагманские темы: «Энергия как валюта продаж», «Эффектная самопрезентация», «AI-трансформация без магии» и «Сервис, который продаёт без продаж». Каждая адаптируется под вашу аудиторию."],
+["Как забронировать дату?","Напишите в Telegram @Kovtun_Industries или в WhatsApp — пришлём свободные даты, темы и райдер. Даты обычно разбирают за 3–4 недели, так что лучше не откладывать 😉"],
+["Сколько длится выступление?","Кейноут — 45–90 минут, мастер-класс — 2–4 часа, панельная дискуссия — по формату события. Тайминг и слайды согласуем за неделю до даты."],
+["Проводите онлайн?","Да, все форматы доступны и онлайн, и офлайн. Онлайн — с полным вовлечением аудитории, это не «вебинар на фоне»."],
+["Выезжаете в другие города?","Конечно. Артём выступал в Москве, Краснодаре, Ялте и других городах — приедет и к вам, логистика включается в предложение."],
+["Какие результаты у клиентов?","Babor: выручка +68%, чек +55%. «Этажи»: конверсия заявок 28% → 51%. Madyar Collection: средний чек +27%, оценки гостей 4.2 → 4.7. Всё это — измеримые результаты после работы с Артёмом."],
+["Работаете с отделами продаж?","Да, формат «Бизнес-тренер в аренду»: сопровождение отдела от 3 месяцев — аудит воронки и CRM, разбор реальных диалогов, тренировки, управленческие сессии. От 80 000 ₽/мес."],
+["А если команда выгорела?","Это одна из сильных сторон Артёма: работа с состоянием и энергией команды, а не только со скриптами. После тренингов у Madyar 85% сотрудников остались в компании, текучка упала вдвое."],
+["Что расскажете про AI?","Программа «AI-трансформация без магии»: какие ИИ-ассистенты реально работают в продажах и сервисе, промптинг, внедрение в процессы и чек-лист безопасности. Без хайпа — только то, что применимо завтра."],
+["Что нужно от площадки?","Минимум: зал, экран/проектор и микрофон. Остальное Артём привезёт с собой — включая энергию на весь зал ⚡"],
+["Есть ли сертификаты участникам?","Да, участники программ получают именной сертификат. Для корпоративных форматов — отчёт по результатам для руководителя."],
+["Возможна рассрочка?","Да, по индивидуальным программам возможна рассрочка и постоплата — условия обсудим в переписке."],
+["Кто уже приглашал Артёма?","«Торус Финанс Групп» (Краснодар), форум «HR-Развитие» (Москва), Mriya Resort & SPA (Ялта). Среди клиентов — Сбербанк, МТС, Babor, «Этажи», Madyar Collection."],
+["Чем Артём отличается от других тренеров?","Никаких шаблонов и пересказа книг: только инструменты, проверенные в его собственном бизнесе. Поэтому 8 из 10 клиентов возвращаются, а средний рост KPI после работы — около 27%."]
+];
+const fab=document.getElementById('asFab'),panel=document.getElementById('asPanel'),body=document.getElementById('asBody'),qs=document.getElementById('asQs');
+function addMsg(cls,html){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;body.appendChild(d);body.scrollTop=body.scrollHeight;return d}
+let opened=false;
+fab.addEventListener('click',()=>{panel.classList.toggle('open');
+  if(!opened){opened=true;
+    setTimeout(()=>{const t=addMsg('bot typing','<span></span><span></span><span></span>');
+      setTimeout(()=>{t.remove();addMsg('bot','Здравствуйте! Я ассистент Артёма Ковтуна 👋 Помогу подобрать формат выступления и отвечу на вопросы — выбирайте ниже, или сразу пишите Артёму в Telegram.')},900)},300)}
+});
+document.getElementById('asClose').addEventListener('click',()=>panel.classList.remove('open'));
+QA.forEach(([q,a])=>{const b=document.createElement('button');b.className='as-q';b.textContent=q;
+  b.addEventListener('click',()=>{b.classList.add('used');addMsg('user',q);
+    const t=addMsg('bot typing','<span></span><span></span><span></span>');
+    setTimeout(()=>{t.remove();addMsg('bot',a)},700+Math.random()*600)});
+  qs.appendChild(b)});
 </script>
 </body>
 </html>
